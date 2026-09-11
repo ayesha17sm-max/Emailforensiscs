@@ -1,0 +1,3012 @@
+[
+  {
+    "id": "c610a146-17a1-43a3-a167-d904dd64e792",
+    "caseId": "CASE-2026-8078",
+    "evidenceId": "EVID-5362E76C",
+    "createdAt": "2026-09-10T17:23:15.706Z",
+    "updatedAt": "2026-09-10T17:23:15.706Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "LOW",
+      "DEMO_DATA",
+      "LEGITIMATE"
+    ],
+    "rawEmlContent": "Received: from mail-relay.techcorp.io (mail-relay.techcorp.io [209.85.220.41])\n    by mx.enterprise-gateway.net with ESMTPS id q19si8392182plm.12.2026.09.10.08.30.12\n    for <security-team@enterprise.org>;\n    Thu, 10 Sep 2026 08:30:12 -0700\nReceived: from workstation-14.internal.techcorp.io ([10.240.0.14])\n    by mail-relay.techcorp.io with ESMTP id 82739182371;\n    Thu, 10 Sep 2026 08:29:55 -0700\nAuthentication-Results: mx.enterprise-gateway.net;\n    spf=pass (sender IP is 209.85.220.41) smtp.mailfrom=techcorp.io;\n    dkim=pass header.d=techcorp.io header.s=20260901;\n    dmarc=pass (p=reject sp=reject dis=none) header.from=techcorp.io\nReceived-SPF: pass (mx.enterprise-gateway.net: domain of techcorp.io designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=techcorp.io; s=20260901;\n    h=from:to:subject:date:message-id:mime-version:content-type;\n    bh=w9u+o1XwT6+P4M6lP=;\n    b=dJ8fN...==\nFrom: \"Alex Johnson\" <alex.johnson@techcorp.io>\nTo: \"Enterprise SecOps\" <security-team@enterprise.org>\nSubject: Q3 Enterprise Architecture & Sprint Review Sync\nDate: Thu, 10 Sep 2026 08:29:40 -0700\nMessage-ID: <CABz=9382910298@mail-relay.techcorp.io>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=\"UTF-8\"\n\nHi Team,\n\nI've shared the slide deck for our upcoming architecture review this Thursday at 2 PM.\nPlease take a look at the proposed event-driven caching schema before the meeting so we can focus our discussion on concurrency and failover targets.\n\nMeeting link is on our Google Calendar.\n\nBest regards,\nAlex Johnson\nLead Architect, TechCorp Systems",
+    "originalFilename": "legit_project_review.eml",
+    "fileSizeBytes": 1635,
+    "sha256": "8095c4624dbc1bf938e9a34af7348b8773e5ee22ab3d6634f25f9f54833db7dc",
+    "subject": "Q3 Enterprise Architecture & Sprint Review Sync",
+    "from": {
+      "name": "Alex Johnson",
+      "address": "alex.johnson@techcorp.io",
+      "domain": "techcorp.io"
+    },
+    "to": [
+      "security-team@enterprise.org"
+    ],
+    "cc": [],
+    "messageId": "<CABz=9382910298@mail-relay.techcorp.io>",
+    "date": "2026-09-10T15:29:40.000Z",
+    "plainTextBody": "Hi Team,\n\nI've shared the slide deck for our upcoming architecture review this Thursday at 2 PM.\nPlease take a look at the proposed event-driven caching schema before the meeting so we can focus our discussion on concurrency and failover targets.\n\nMeeting link is on our Google Calendar.\n\nBest regards,\nAlex Johnson\nLead Architect, TechCorp Systems",
+    "normalizedText": "Hi Team, I've shared the slide deck for our upcoming architecture review this Thursday at 2 PM.\nPlease take a look at the proposed event-driven caching schema before the meeting so we can focus our discussion on concurrency and failover targets. Meeting link is on our Google Calendar. Best regards,\nAlex Johnson\nLead Architect, TechCorp Systems",
+    "authentication": {
+      "spf": {
+        "status": "PASS",
+        "details": "SPF record verified: sender IP authorized by domain policy",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "PASS",
+        "details": "DKIM status: PASS from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "PASS",
+        "details": "DMARC alignment passed (SPF/DKIM align with From domain)",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": false,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": []
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "10.240.0.14",
+        "hostname": "workstation-14.internal.techcorp.io",
+        "byHost": "mail-relay.techcorp.io",
+        "timestamp": "Thu, 10 Sep 2026 08:29:55 -0700",
+        "rawHeader": "from workstation-14.internal.techcorp.io ([10.240.0.14]) by mail-relay.techcorp.io with ESMTP id 82739182371; Thu, 10 Sep 2026 08:29:55 -0700",
+        "trustAssessment": "untrusted/possibly forged hop",
+        "country": "Private/Internal Network",
+        "city": "Local Area Network",
+        "asn": "N/A",
+        "org": "Local Subnet",
+        "isPrivateIp": true
+      },
+      {
+        "hopNumber": 2,
+        "ip": "209.85.220.41",
+        "hostname": "mail-relay.techcorp.io",
+        "byHost": "mx.enterprise-gateway.net",
+        "timestamp": "Thu, 10 Sep 2026 08:30:12 -0700",
+        "rawHeader": "from mail-relay.techcorp.io (mail-relay.techcorp.io [209.85.220.41]) by mx.enterprise-gateway.net with ESMTPS id q19si8392182plm.12.2026.09.10.08.30.12 for <security-team@enterprise.org>; Thu, 10 Sep 2026 08:30:12 -0700",
+        "trustAssessment": "probable infrastructure origin",
+        "country": "United States",
+        "city": "Mountain View",
+        "asn": "AS15169",
+        "org": "Google Mail Servers",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "10.240.0.14",
+        "version": "IPv4",
+        "isPrivate": true,
+        "country": "Private/Internal Network",
+        "countryCode": "LAN",
+        "region": "Internal RFC 1918 / Loopback",
+        "city": "Local Area Network",
+        "isp": "Internal Enterprise Network",
+        "asn": "N/A",
+        "org": "Local Subnet",
+        "isVpnOrProxy": false,
+        "reputationStatus": "NOT FOUND",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      },
+      {
+        "ip": "209.85.220.41",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "United States",
+        "countryCode": "US",
+        "region": "California",
+        "city": "Mountain View",
+        "isp": "Google LLC",
+        "asn": "AS15169",
+        "org": "Google Mail Servers",
+        "isVpnOrProxy": false,
+        "reputationStatus": "NOT FOUND",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [],
+    "domains": [
+      {
+        "domain": "techcorp.io",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": false,
+        "suspiciousTld": false,
+        "entropy": 3.096,
+        "flags": []
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 0,
+      "urgencyKeywords": [],
+      "financialScore": 20,
+      "financialKeywords": [
+        "ach"
+      ],
+      "credentialScore": 0,
+      "credentialKeywords": [],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Legitimate",
+      "confidence": 0.9193,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.9193,
+        "Phishing": 0.0042,
+        "BEC/Fraud": 0.0211,
+        "Spam": 0.0334,
+        "Suspicious": 0.022
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "meeting",
+          "weight": 1.135,
+          "value": 0.541,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_financial_words",
+          "weight": 0.417,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "review",
+          "weight": 0.606,
+          "value": 0.502,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "team",
+          "weight": 0.795,
+          "value": 0.324,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "please",
+          "weight": -0.314,
+          "value": 0.27,
+          "impact": "decreases_risk"
+        },
+        {
+          "feature": "link",
+          "weight": 0.265,
+          "value": 0.294,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "google",
+          "weight": 0.208,
+          "value": 0.294,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "upcoming",
+          "weight": -0.106,
+          "value": 0.324,
+          "impact": "decreases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": false,
+        "maliciousProbability": 0.0585
+      }
+    },
+    "risk": {
+      "score": 0,
+      "category": "Low",
+      "positiveFactors": [
+        {
+          "points": 14,
+          "rule": "RELAY_UNTRUSTED_HOP",
+          "description": "Relay chain contains anomalous or untrusted intermediate hops",
+          "category": "infrastructure"
+        }
+      ],
+      "negativeFactors": [
+        {
+          "points": -25,
+          "rule": "AUTH_FULLY_ALIGNED",
+          "description": "SPF, DKIM, and DMARC passed with valid aligned domain",
+          "category": "authentication"
+        },
+        {
+          "points": -20,
+          "rule": "ML_HIGH_CONF_LEGITIMATE",
+          "description": "Machine learning model predicted Legitimate with high confidence",
+          "category": "ml"
+        }
+      ],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +14 risk points from 1 indicators, mitigated by -45 points from verified legitimate signals. Final risk assessed at 0/100 (Low)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "Message analyzed as routine or legitimate communication. Cryptographic authentication checks and content heuristics show no significant indicators of credential harvesting, malware delivery, or executive impersonation.",
+      "threatActorTTPs": "TTP Analysis: No adversarial Tactics, Techniques, or Procedures (TTPs) were identified. Routine business communication patterns observed.",
+      "evidenceHighlights": [
+        "Sender SPF and DKIM verified successfully",
+        "No malicious attachments or suspicious URLs detected",
+        "Natural language text contains standard operational conversation"
+      ],
+      "recommendedActions": [
+        "No immediate remediation required; message safe for standard delivery"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:23:15.706Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "System (Demo Seed)",
+        "details": "Ingested legit_project_review.eml (SHA-256: 8095c4624dbc1bf9...). Initial risk score: 0/100 (Low)."
+      }
+    ]
+  },
+  {
+    "id": "1adf7421-1a6e-4ec6-a848-a62c7e237fa5",
+    "caseId": "CASE-2026-2423",
+    "evidenceId": "EVID-8D6A4FAE",
+    "createdAt": "2026-09-10T17:23:38.917Z",
+    "updatedAt": "2026-09-10T17:23:38.917Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "CRITICAL",
+      "PHISHING",
+      "DISPLAY_SPOOF",
+      "ANCHOR_MISMATCH",
+      "DEMO_DATA",
+      "PHISHING"
+    ],
+    "rawEmlContent": "Received: from mail.defense-inbound.com (mail.defense-inbound.com [198.51.100.22])\n    by mx.enterprise-gateway.net with ESMTP id f823910plm;\n    Thu, 10 Sep 2026 09:12:00 -0700\nReceived: from vps-8192.bulletproof-host.net (vps-8192.bulletproof-host.net [185.220.101.5])\n    by mail.defense-inbound.com with ESMTP id 98127391;\n    Thu, 10 Sep 2026 09:11:45 -0700\nAuthentication-Results: mx.enterprise-gateway.net;\n    spf=fail (sender IP is 185.220.101.5) smtp.mailfrom=ms-security-portal-verify.top;\n    dkim=fail;\n    dmarc=fail (p=quarantine) header.from=ms-security-portal-verify.top\nReceived-SPF: fail (mx.enterprise-gateway.net: domain of ms-security-portal-verify.top does not designate 185.220.101.5 as permitted sender) client-ip=185.220.101.5;\nFrom: \"Microsoft 365 Security Team\" <admin-noreply@ms-security-portal-verify.top>\nReply-To: \"IT Support Recovery\" <harvest-collector@attacker-dropzone.xyz>\nReturn-Path: <bounce@ms-security-portal-verify.top>\nTo: <target.employee@enterprise.org>\nSubject: ACTION REQUIRED: Microsoft 365 Account Suspension Warning\nDate: Thu, 10 Sep 2026 09:11:30 -0700\nMessage-ID: <random-9821873@attacker-generator.club>\nMIME-Version: 1.0\nContent-Type: text/html; charset=\"UTF-8\"\n\n<!DOCTYPE html>\n<html>\n<body>\n<div style=\"font-family: Arial, sans-serif; padding: 20px;\">\n  <h2 style=\"color: #d9381e;\">Immediate Action Required: Microsoft 365 Session Terminated</h2>\n  <p>Dear Valued User,</p>\n  <p>We detected multiple failed authentication attempts and abnormal sign-in activity from an unrecognized location on your corporate Microsoft 365 account.</p>\n  <p><strong>To prevent complete account lockout and loss of inbox access, you must verify your login credentials immediately today:</strong></p>\n  <p style=\"margin: 25px 0;\">\n    <a href=\"https://ms-security-portal-verify.top/auth/login?session=9821\" style=\"background-color: #0078d4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;\">\n      https://login.microsoftonline.com/verify-identity\n    </a>\n  </p>\n  <p>Failure to complete verification within 24 hours will result in permanent account termination under organizational security policy.</p>\n  <div style=\"display:none; font-size:0px; color:#fff;\">\n    hidden token payload for filter evasion: 871239871249817234987124\n  </div>\n  <p style=\"color: #666; font-size: 12px; margin-top: 30px;\">Microsoft Corporation, One Microsoft Way, Redmond, WA 98052</p>\n</div>\n</body>\n</html>",
+    "originalFilename": "m365_credential_harvest.eml",
+    "fileSizeBytes": 2472,
+    "sha256": "f21dcd9318e3431fb2cb5c5b4473ad3571e942ba5f7ea76a7637080514f58cea",
+    "subject": "ACTION REQUIRED: Microsoft 365 Account Suspension Warning",
+    "from": {
+      "name": "Microsoft 365 Security Team",
+      "address": "admin-noreply@ms-security-portal-verify.top",
+      "domain": "ms-security-portal-verify.top"
+    },
+    "to": [
+      "target.employee@enterprise.org"
+    ],
+    "cc": [],
+    "replyTo": "harvest-collector@attacker-dropzone.xyz",
+    "returnPath": "bounce@ms-security-portal-verify.top",
+    "messageId": "<random-9821873@attacker-generator.club>",
+    "date": "2026-09-10T16:11:30.000Z",
+    "plainTextBody": "IMMEDIATE ACTION REQUIRED: MICROSOFT 365 SESSION TERMINATED\n\nDear Valued User,\n\nWe detected multiple failed authentication attempts and abnormal sign-in\nactivity from an unrecognized location on your corporate Microsoft 365 account.\n\nTo prevent complete account lockout and loss of inbox access, you must verify\nyour login credentials immediately today:\n\nhttps://login.microsoftonline.com/verify-identity\n[https://ms-security-portal-verify.top/auth/login?session=9821]\n\nFailure to complete verification within 24 hours will result in permanent\naccount termination under organizational security policy.\n\nhidden token payload for filter evasion: 871239871249817234987124\n\nMicrosoft Corporation, One Microsoft Way, Redmond, WA 98052",
+    "htmlBody": "<!DOCTYPE html>\n<html>\n<body>\n<div style=\"font-family: Arial, sans-serif; padding: 20px;\">\n  <h2 style=\"color: #d9381e;\">Immediate Action Required: Microsoft 365 Session Terminated</h2>\n  <p>Dear Valued User,</p>\n  <p>We detected multiple failed authentication attempts and abnormal sign-in activity from an unrecognized location on your corporate Microsoft 365 account.</p>\n  <p><strong>To prevent complete account lockout and loss of inbox access, you must verify your login credentials immediately today:</strong></p>\n  <p style=\"margin: 25px 0;\">\n    <a href=\"https://ms-security-portal-verify.top/auth/login?session=9821\" style=\"background-color: #0078d4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;\">\n      https://login.microsoftonline.com/verify-identity\n    </a>\n  </p>\n  <p>Failure to complete verification within 24 hours will result in permanent account termination under organizational security policy.</p>\n  <div style=\"display:none; font-size:0px; color:#fff;\">\n    hidden token payload for filter evasion: 871239871249817234987124\n  </div>\n  <p style=\"color: #666; font-size: 12px; margin-top: 30px;\">Microsoft Corporation, One Microsoft Way, Redmond, WA 98052</p>\n</div>\n</body>\n</html>",
+    "normalizedText": "IMMEDIATE ACTION REQUIRED: MICROSOFT 365 SESSION TERMINATED Dear Valued User, We detected multiple failed authentication attempts and abnormal sign-in\nactivity from an unrecognized location on your corporate Microsoft 365 account. To prevent complete account lockout and loss of inbox access, you must verify\nyour login credentials immediately today: https://login.microsoftonline.com/verify-identity\n[https://ms-security-portal-verify.top/auth/login?session=9821] Failure to complete verification within 24 hours will result in permanent\naccount termination under organizational security policy. hidden token payload for filter evasion: 871239871249817234987124 Microsoft Corporation, One Microsoft Way, Redmond, WA 98052",
+    "authentication": {
+      "spf": {
+        "status": "FAIL",
+        "details": "SPF HardFail: sender IP rejected by domain SPF policy (-all)",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "FAIL",
+        "details": "DKIM status: FAIL from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "FAIL",
+        "details": "DMARC policy failed: alignment between From domain and SPF/DKIM was rejected",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": true,
+      "fromReplyMismatch": true,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": true,
+      "detectedMismatches": [
+        "Display name claims 'Microsoft 365 Security Team' (microsoft) but sent from unrelated domain 'ms-security-portal-verify.top'",
+        "Reply-To address ('harvest-collector@attacker-dropzone.xyz') directs replies to a different domain than From header ('admin-noreply@ms-security-portal-verify.top')",
+        "Message-ID domain ('attacker-generator.club') deviates from From domain ('ms-security-portal-verify.top')"
+      ]
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "185.220.101.5",
+        "hostname": "vps-8192.bulletproof-host.net",
+        "byHost": "mail.defense-inbound.com",
+        "timestamp": "Thu, 10 Sep 2026 09:11:45 -0700",
+        "rawHeader": "from vps-8192.bulletproof-host.net (vps-8192.bulletproof-host.net [185.220.101.5]) by mail.defense-inbound.com with ESMTP id 98127391; Thu, 10 Sep 2026 09:11:45 -0700",
+        "trustAssessment": "earliest observed IP",
+        "country": "Germany",
+        "city": "Frankfurt",
+        "asn": "AS205100",
+        "org": "Tor Exit Node Relay",
+        "isPrivateIp": false
+      },
+      {
+        "hopNumber": 2,
+        "ip": "198.51.100.22",
+        "hostname": "mail.defense-inbound.com",
+        "byHost": "mx.enterprise-gateway.net",
+        "timestamp": "Thu, 10 Sep 2026 09:12:00 -0700",
+        "rawHeader": "from mail.defense-inbound.com (mail.defense-inbound.com [198.51.100.22]) by mx.enterprise-gateway.net with ESMTP id f823910plm; Thu, 10 Sep 2026 09:12:00 -0700",
+        "trustAssessment": "trusted hop",
+        "country": "Romania",
+        "city": "Bucharest",
+        "asn": "Unknown",
+        "org": "TEST-NET-2 RFC5737",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "185.220.101.5",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Germany",
+        "countryCode": "DE",
+        "region": "Hesse",
+        "city": "Frankfurt",
+        "isp": "Zwiebelfreunde e.V.",
+        "asn": "AS205100",
+        "org": "Tor Exit Node Relay",
+        "isVpnOrProxy": true,
+        "reputationStatus": "SUSPICIOUS",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      },
+      {
+        "ip": "198.51.100.22",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Romania",
+        "countryCode": "RO",
+        "region": "București",
+        "city": "Bucharest",
+        "lat": 44.4267,
+        "lon": 26.1025,
+        "isp": "TEST-NET-2",
+        "asn": "Unknown",
+        "org": "TEST-NET-2 RFC5737",
+        "isVpnOrProxy": false,
+        "reputationStatus": "NOT FOUND",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [
+      {
+        "id": "url-439d9ebf",
+        "rawUrl": "https://ms-security-portal-verify.top/auth/login?session=9821",
+        "protocol": "https:",
+        "domain": "ms-security-portal-verify.top",
+        "path": "/auth/login",
+        "queryParams": {
+          "session": "9821"
+        },
+        "isHttps": true,
+        "hasIpHost": false,
+        "isShortened": false,
+        "isLookalike": true,
+        "lookalikeTarget": "microsoft",
+        "isSuspiciousTld": true,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorText": "https://login.microsoftonline.com/verify-identity",
+        "anchorMismatch": true,
+        "verdict": "MALICIOUS",
+        "threatIntelStatus": "SUSPICIOUS",
+        "reasons": [
+          "Hyperlink text displays 'https://login.microsoftonline.com/verify-identity' but actually links to completely different host 'ms-security-portal-verify.top'",
+          "Lookalike/typosquat domain detected targeting 'microsoft'",
+          "Registered under high-abuse TLD (.top)"
+        ]
+      },
+      {
+        "id": "url-fd59793c",
+        "rawUrl": "https://login.microsoftonline.com/verify-identity",
+        "protocol": "https:",
+        "domain": "login.microsoftonline.com",
+        "path": "/verify-identity",
+        "queryParams": {},
+        "isHttps": true,
+        "hasIpHost": false,
+        "isShortened": false,
+        "isLookalike": true,
+        "lookalikeTarget": "microsoft",
+        "isSuspiciousTld": false,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorMismatch": false,
+        "verdict": "MALICIOUS",
+        "threatIntelStatus": "SUSPICIOUS",
+        "reasons": [
+          "Lookalike/typosquat domain detected targeting 'microsoft'"
+        ]
+      },
+      {
+        "id": "url-7b3e9e4c",
+        "rawUrl": "https://ms-security-portal-verify.top/auth/login?session=9821]",
+        "protocol": "https:",
+        "domain": "ms-security-portal-verify.top",
+        "path": "/auth/login",
+        "queryParams": {
+          "session": "9821]"
+        },
+        "isHttps": true,
+        "hasIpHost": false,
+        "isShortened": false,
+        "isLookalike": true,
+        "lookalikeTarget": "microsoft",
+        "isSuspiciousTld": true,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorMismatch": false,
+        "verdict": "MALICIOUS",
+        "threatIntelStatus": "SUSPICIOUS",
+        "reasons": [
+          "Lookalike/typosquat domain detected targeting 'microsoft'",
+          "Registered under high-abuse TLD (.top)"
+        ]
+      }
+    ],
+    "domains": [
+      {
+        "domain": "ms-security-portal-verify.top",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": true,
+        "lookalikeTarget": "microsoft",
+        "suspiciousTld": true,
+        "entropy": 3.952,
+        "flags": [
+          "Typosquatting/brand impersonation match: 'microsoft'",
+          "High abuse rate top-level domain: .top",
+          "High lexical entropy (3.952): potential DGA or random character generation"
+        ]
+      },
+      {
+        "domain": "attacker-dropzone.xyz",
+        "source": "reply-to",
+        "hasMx": false,
+        "isLookalike": false,
+        "suspiciousTld": true,
+        "entropy": 3.821,
+        "flags": [
+          "High abuse rate top-level domain: .xyz",
+          "High lexical entropy (3.821): potential DGA or random character generation"
+        ]
+      },
+      {
+        "domain": "login.microsoftonline.com",
+        "source": "url",
+        "hasMx": false,
+        "isLookalike": true,
+        "lookalikeTarget": "microsoft",
+        "suspiciousTld": false,
+        "entropy": 3.479,
+        "flags": [
+          "Typosquatting/brand impersonation match: 'microsoft'"
+        ]
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 100,
+      "urgencyKeywords": [
+        "immediately",
+        "today",
+        "action required",
+        "within 24 hours"
+      ],
+      "financialScore": 0,
+      "financialKeywords": [],
+      "credentialScore": 100,
+      "credentialKeywords": [
+        "login",
+        "authentication",
+        "credentials",
+        "portal"
+      ],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 60,
+      "threatKeywords": [
+        "suspension",
+        "terminated"
+      ],
+      "callToActionCount": 0,
+      "hiddenTextDetected": true,
+      "hiddenTextSnippet": "hidden token payload for filter evasion: 871239871249817234987124",
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Phishing",
+      "confidence": 0.9783,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.0008,
+        "Phishing": 0.9783,
+        "BEC/Fraud": 0.0115,
+        "Spam": 0.0026,
+        "Suspicious": 0.0068
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[tech] anchor_text_url_mismatch",
+          "weight": 1.853,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_credential_harvest_words",
+          "weight": 1.594,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] auth_security_failure",
+          "weight": 1.402,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] frequent_credential_terms",
+          "weight": 0.656,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] threat_or_penalty_terms",
+          "weight": 0.424,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_urgency_words",
+          "weight": 0.219,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] extreme_urgency_frequency",
+          "weight": 0.154,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "account",
+          "weight": 0.121,
+          "value": 0.655,
+          "impact": "increases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.9962
+      }
+    },
+    "risk": {
+      "score": 100,
+      "category": "Critical",
+      "positiveFactors": [
+        {
+          "points": 22,
+          "rule": "AUTH_DMARC_FAIL",
+          "description": "DMARC policy validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "AUTH_SPF_FAIL",
+          "description": "SPF sender validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 15,
+          "rule": "AUTH_DKIM_FAIL",
+          "description": "DKIM cryptographic signature verification failed",
+          "category": "authentication"
+        },
+        {
+          "points": 25,
+          "rule": "IDENTITY_DISPLAY_SPOOF",
+          "description": "Display name impersonates known executive or organization while sender domain is external",
+          "category": "sender"
+        },
+        {
+          "points": 18,
+          "rule": "IDENTITY_REPLYTO_MISMATCH",
+          "description": "Reply-To address differs significantly from From address",
+          "category": "sender"
+        },
+        {
+          "points": 28,
+          "rule": "IDENTITY_LOOKALIKE_DOMAIN",
+          "description": "Sender domain matches typosquatting or brand impersonation pattern",
+          "category": "sender"
+        },
+        {
+          "points": 35,
+          "rule": "URL_KNOWN_MALICIOUS",
+          "description": "Extracted URL flagged by threat intelligence database",
+          "category": "links"
+        },
+        {
+          "points": 26,
+          "rule": "URL_ANCHOR_MISMATCH",
+          "description": "HTML hyperlink text shows trusted domain but destination href points to an external or suspicious host",
+          "category": "links"
+        },
+        {
+          "points": 20,
+          "rule": "URL_LOOKALIKE_DOMAIN",
+          "description": "URL domain is a lookalike/typosquat of major brand",
+          "category": "links"
+        },
+        {
+          "points": 22,
+          "rule": "NLP_CREDENTIAL_HARVEST",
+          "description": "Content requests password, account verification, or login credentials",
+          "category": "content"
+        },
+        {
+          "points": 15,
+          "rule": "NLP_URGENCY_PRESSURE",
+          "description": "Excessive urgency pressure and threat of account suspension/penalties",
+          "category": "content"
+        },
+        {
+          "points": 20,
+          "rule": "CONTENT_HIDDEN_HTML",
+          "description": "Obfuscated or hidden HTML text detected (zero-font, CSS display:none, white-on-white text)",
+          "category": "content"
+        },
+        {
+          "points": 22,
+          "rule": "ML_HIGH_CONF_PHISHING",
+          "description": "Machine learning model predicted Phishing with high confidence",
+          "category": "ml"
+        }
+      ],
+      "negativeFactors": [],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +286 risk points from 13 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 100/100 (Critical)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "Credential harvesting and phishing attack pattern identified targeting message recipient. Analysis revealed deceptive call-to-action indicators, domain spoofing elements, and suspicious URL structures designed to capture user authentication credentials.",
+      "threatActorTTPs": "TTP Analysis: T1566.002 (Spearphishing Link) / T1566.001 (Spearphishing Attachment) / T1656 (Impersonation). Actor utilized urgent deadline lures to bypass critical thinking, obfuscated destination links, and bypassed standard SPF/DMARC filters via external relay infrastructure.",
+      "evidenceHighlights": [
+        "SPF sender authorization failed",
+        "DMARC domain policy rejected sender alignment",
+        "Display name impersonation: claimed brand/executive but sent from 'ms-security-portal-verify.top'",
+        "Hyperlink anchor text does not match underlying href target (credential lure)",
+        "Lookalike/typosquatted brand domain detected in extracted hyperlinks",
+        "Content actively solicits login credentials, password reset, or portal authentication",
+        "Zero-font or CSS-hidden text detected designed to alter spam bayesian weights"
+      ],
+      "recommendedActions": [
+        "Immediately quarantine message across tenant mailboxes via Exchange/Google Admin",
+        "Block sender address and origin IP in mail gateway / firewall edge rules",
+        "Reset credentials immediately for any recipient who accessed embedded URLs",
+        "Add extracted malicious domains and attachment hashes to EDR/SIEM watchlists"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:23:38.917Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "System (Demo Seed)",
+        "details": "Ingested m365_credential_harvest.eml (SHA-256: f21dcd9318e3431f...). Initial risk score: 100/100 (Critical)."
+      }
+    ]
+  },
+  {
+    "id": "735b66e1-fd17-4170-a9bc-667a984a0ab1",
+    "caseId": "CASE-2026-6545",
+    "evidenceId": "EVID-7276271C",
+    "createdAt": "2026-09-10T17:23:39.184Z",
+    "updatedAt": "2026-09-10T17:23:39.184Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "CRITICAL",
+      "BEC/FRAUD",
+      "DEMO_DATA",
+      "BEC/FRAUD"
+    ],
+    "rawEmlContent": "Received: from mail.outbound-relay.org (mail.outbound-relay.org [194.26.29.112])\n    by mx.enterprise-gateway.net with ESMTP id b71928374;\n    Thu, 10 Sep 2026 09:45:10 -0700\nAuthentication-Results: mx.enterprise-gateway.net;\n    spf=fail (sender IP 194.26.29.112 not authorized for enterprise.org);\n    dkim=none;\n    dmarc=fail (p=reject) header.from=ceo-office-confidential.com\nFrom: \"Robert Henderson (CEO)\" <robert.henderson@ceo-office-confidential.com>\nReply-To: <ceo-private-blackberry@protonmail.com>\nTo: \"Jane Miller (VP Finance)\" <jane.miller@enterprise.org>\nSubject: URGENT: Confidential Acquisition Wire Transfer (Project Horizon)\nDate: Thu, 10 Sep 2026 09:44:50 -0700\nMessage-ID: <exec-829102-urgent@ceo-office-confidential.com>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=\"UTF-8\"\n\nJane,\n\nAre you at your desk right now?\n\nWe are in the final closing hours of our confidential acquisition for Project Horizon.\nDue to strict non-disclosure obligations, this cannot go through our standard ERP ticketing queue.\n\nI need an urgent initial retainer wire transfer of $185,000 processed to outside escrow counsel before the Federal Reserve wire window closes at 3:00 PM EST today.\n\nPlease confirm you can process this immediately so I can send over the routing and account details.\nKeep this strictly between us until the formal press release on Monday.\n\nSent from my iPhone\nRobert Henderson\nChief Executive Officer",
+    "originalFilename": "bec_ceo_wire_transfer.eml",
+    "fileSizeBytes": 1428,
+    "sha256": "13e84de5774ee510d58a4e2f3a74dfaf9b50d9ef9c0b63c9a6addceae382c826",
+    "subject": "URGENT: Confidential Acquisition Wire Transfer (Project Horizon)",
+    "from": {
+      "name": "Robert Henderson (CEO)",
+      "address": "robert.henderson@ceo-office-confidential.com",
+      "domain": "ceo-office-confidential.com"
+    },
+    "to": [
+      "jane.miller@enterprise.org"
+    ],
+    "cc": [],
+    "replyTo": "ceo-private-blackberry@protonmail.com",
+    "messageId": "<exec-829102-urgent@ceo-office-confidential.com>",
+    "date": "2026-09-10T16:44:50.000Z",
+    "plainTextBody": "Jane,\n\nAre you at your desk right now?\n\nWe are in the final closing hours of our confidential acquisition for Project Horizon.\nDue to strict non-disclosure obligations, this cannot go through our standard ERP ticketing queue.\n\nI need an urgent initial retainer wire transfer of $185,000 processed to outside escrow counsel before the Federal Reserve wire window closes at 3:00 PM EST today.\n\nPlease confirm you can process this immediately so I can send over the routing and account details.\nKeep this strictly between us until the formal press release on Monday.\n\nSent from my iPhone\nRobert Henderson\nChief Executive Officer",
+    "normalizedText": "Jane, Are you at your desk right now? We are in the final closing hours of our confidential acquisition for Project Horizon.\nDue to strict non-disclosure obligations, this cannot go through our standard ERP ticketing queue. I need an urgent initial retainer wire transfer of $185,000 processed to outside escrow counsel before the Federal Reserve wire window closes at 3:00 PM EST today. Please confirm you can process this immediately so I can send over the routing and account details.\nKeep this strictly between us until the formal press release on Monday. Sent from my iPhone\nRobert Henderson\nChief Executive Officer",
+    "authentication": {
+      "spf": {
+        "status": "FAIL",
+        "details": "SPF recorded as FAIL via Authentication-Results",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "NOT_VERIFIED",
+        "details": "DKIM status: NONE from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "FAIL",
+        "details": "DMARC policy failed: alignment between From domain and SPF/DKIM was rejected",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": false,
+      "fromReplyMismatch": true,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": [
+        "Reply-To address ('ceo-private-blackberry@protonmail.com') directs replies to a different domain than From header ('robert.henderson@ceo-office-confidential.com')"
+      ]
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "194.26.29.112",
+        "hostname": "mail.outbound-relay.org",
+        "byHost": "mx.enterprise-gateway.net",
+        "timestamp": "Thu, 10 Sep 2026 09:45:10 -0700",
+        "rawHeader": "from mail.outbound-relay.org (mail.outbound-relay.org [194.26.29.112]) by mx.enterprise-gateway.net with ESMTP id b71928374; Thu, 10 Sep 2026 09:45:10 -0700",
+        "trustAssessment": "earliest observed IP",
+        "country": "Russian Federation",
+        "city": "Moscow",
+        "asn": "AS4865",
+        "org": "Offshore Bulletproof Hosting",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "194.26.29.112",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Russian Federation",
+        "countryCode": "RU",
+        "region": "Moscow",
+        "city": "Moscow",
+        "isp": "Chunghwa Telecommunications",
+        "asn": "AS4865",
+        "org": "Offshore Bulletproof Hosting",
+        "isVpnOrProxy": false,
+        "reputationStatus": "KNOWN MALICIOUS",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [],
+    "domains": [
+      {
+        "domain": "ceo-office-confidential.com",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": false,
+        "suspiciousTld": false,
+        "entropy": 3.486,
+        "flags": []
+      },
+      {
+        "domain": "protonmail.com",
+        "source": "reply-to",
+        "hasMx": true,
+        "spfRecord": "v=spf1 include:_spf.protonmail.ch ~all",
+        "dmarcRecord": "v=DMARC1; p=quarantine; fo=1; aspf=s; adkim=s;",
+        "isLookalike": false,
+        "suspiciousTld": false,
+        "entropy": 3.325,
+        "flags": []
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 75,
+      "urgencyKeywords": [
+        "urgent",
+        "immediately",
+        "today"
+      ],
+      "financialScore": 40,
+      "financialKeywords": [
+        "wire",
+        "transfer"
+      ],
+      "credentialScore": 0,
+      "credentialKeywords": [],
+      "impersonationScore": 25,
+      "impersonationKeywords": [
+        "executive"
+      ],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "BEC/Fraud",
+      "confidence": 0.9763,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.0007,
+        "Phishing": 0.0199,
+        "BEC/Fraud": 0.9763,
+        "Spam": 0.0012,
+        "Suspicious": 0.0018
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[tech] executive_hierarchy_terms",
+          "weight": 1.4,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_credential_harvest_words",
+          "weight": 1.202,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_urgency_words",
+          "weight": 0.699,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] auth_security_failure",
+          "weight": 0.551,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_financial_words",
+          "weight": 0.5,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "wire",
+          "weight": 0.589,
+          "value": 0.666,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] frequent_financial_terms",
+          "weight": 0.377,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "account",
+          "weight": 1.134,
+          "value": 0.172,
+          "impact": "increases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.9981
+      }
+    },
+    "risk": {
+      "score": 100,
+      "category": "Critical",
+      "positiveFactors": [
+        {
+          "points": 22,
+          "rule": "AUTH_DMARC_FAIL",
+          "description": "DMARC policy validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "AUTH_SPF_FAIL",
+          "description": "SPF sender validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "IDENTITY_REPLYTO_MISMATCH",
+          "description": "Reply-To address differs significantly from From address",
+          "category": "sender"
+        },
+        {
+          "points": 24,
+          "rule": "NLP_FINANCIAL_DIVERSION",
+          "description": "Content requests urgent wire transfer, ACH bank update, or payment diversion",
+          "category": "content"
+        },
+        {
+          "points": 25,
+          "rule": "ML_HIGH_CONF_BEC",
+          "description": "Machine learning model predicted BEC/Fraud with high confidence",
+          "category": "ml"
+        }
+      ],
+      "negativeFactors": [],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +107 risk points from 5 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 100/100 (Critical)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "High-confidence Business Email Compromise (BEC) and financial fraud pattern detected in message titled \"URGENT: Confidential Acquisition Wire Transfer (Project Horizon)\". The sender claims identity \"Robert Henderson (CEO)\" but exhibits sender impersonation indicators and urgent payment diversion phrasing without verified cryptographic domain alignment.",
+      "threatActorTTPs": "TTP Analysis: T1566.002 (Spearphishing Link) / T1566.001 (Spearphishing Attachment) / T1656 (Impersonation). Actor utilized urgent deadline lures to bypass critical thinking, obfuscated destination links, and bypassed standard SPF/DMARC filters via external relay infrastructure.",
+      "evidenceHighlights": [
+        "SPF sender authorization failed",
+        "DMARC domain policy rejected sender alignment",
+        "Content solicits urgent wire transfer, bank account re-routing, or invoice payments"
+      ],
+      "recommendedActions": [
+        "Immediately quarantine message across tenant mailboxes via Exchange/Google Admin",
+        "Block sender address and origin IP in mail gateway / firewall edge rules",
+        "Reset credentials immediately for any recipient who accessed embedded URLs",
+        "Add extracted malicious domains and attachment hashes to EDR/SIEM watchlists"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:23:39.184Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "System (Demo Seed)",
+        "details": "Ingested bec_ceo_wire_transfer.eml (SHA-256: 13e84de5774ee510...). Initial risk score: 100/100 (Critical)."
+      }
+    ]
+  },
+  {
+    "id": "48fb9a01-847f-40de-ac52-0eeedcb719cc",
+    "caseId": "CASE-2026-5980",
+    "evidenceId": "EVID-265BC649",
+    "createdAt": "2026-09-10T17:23:39.500Z",
+    "updatedAt": "2026-09-10T17:23:39.500Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "CRITICAL",
+      "PHISHING",
+      "DISPLAY_SPOOF",
+      "ANCHOR_MISMATCH",
+      "DEMO_DATA",
+      "CREDENTIAL HARVESTING"
+    ],
+    "rawEmlContent": "Received: from mta-out.bulletproof-servers.net (mta-out.bulletproof-servers.net [45.154.255.89])\n    by mx.enterprise-gateway.net with ESMTP id a91827364;\n    Thu, 10 Sep 2026 07:15:20 -0700\nAuthentication-Results: mx.enterprise-gateway.net;\n    spf=fail; dkim=fail; dmarc=fail\nFrom: \"Bank of America Fraud Prevention\" <alerts@bofa-online-alert.tk>\nReply-To: <disputes@bofa-online-alert.tk>\nTo: <customer@enterprise.org>\nSubject: Security Alert: Bank of America Suspicious ACH Transfer Flagged\nDate: Thu, 10 Sep 2026 07:14:50 -0700\nMessage-ID: <bofa-98237198273@alert-dispatcher.link>\nMIME-Version: 1.0\nContent-Type: text/html; charset=\"UTF-8\"\n\n<!DOCTYPE html>\n<html>\n<body>\n<div style=\"font-family: Arial, sans-serif; max-width: 600px; border: 1px solid #ddd; padding: 20px;\">\n  <div style=\"background-color: #e31837; color: white; padding: 15px; font-weight: bold; font-size: 18px;\">\n    Bank of America &bull; Fraud Prevention Alert\n  </div>\n  <p style=\"margin-top: 20px;\">Dear Account Holder,</p>\n  <p>An outgoing electronic wire transfer in the amount of <strong>$4,250.00 USD</strong> was initiated from your commercial checking account on September 10, 2026.</p>\n  <p>If you did not authorize this transaction, please dispute the withdrawal and re-verify your online banking authentication credentials immediately:</p>\n  <p style=\"margin: 20px 0;\">\n    <a href=\"http://45.154.255.89/bofa-login/portal.php?id=8291\" style=\"color: #0056b3; font-weight: bold;\">\n      https://www.bankofamerica.com/online-banking/dispute-claim.go\n    </a>\n  </p>\n  <p>Failure to verify within 6 hours will authorize automatic fund settlement under federal regulation.</p>\n  <p style=\"color: #777; font-size: 11px;\">Bank of America, N.A. Member FDIC. Equal Housing Lender &copy; 2026 Bank of America Corporation.</p>\n</div>\n</body>\n</html>",
+    "originalFilename": "bank_credential_harvest.eml",
+    "fileSizeBytes": 1824,
+    "sha256": "0e6c47d323234a416b55a4ce0661a05a8ab82a788e777be78dbb9032a2568734",
+    "subject": "Security Alert: Bank of America Suspicious ACH Transfer Flagged",
+    "from": {
+      "name": "Bank of America Fraud Prevention",
+      "address": "alerts@bofa-online-alert.tk",
+      "domain": "bofa-online-alert.tk"
+    },
+    "to": [
+      "customer@enterprise.org"
+    ],
+    "cc": [],
+    "replyTo": "disputes@bofa-online-alert.tk",
+    "messageId": "<bofa-98237198273@alert-dispatcher.link>",
+    "date": "2026-09-10T14:14:50.000Z",
+    "plainTextBody": "Bank of America • Fraud Prevention Alert\n\nDear Account Holder,\n\nAn outgoing electronic wire transfer in the amount of $4,250.00 USD was\ninitiated from your commercial checking account on September 10, 2026.\n\nIf you did not authorize this transaction, please dispute the withdrawal and\nre-verify your online banking authentication credentials immediately:\n\nhttps://www.bankofamerica.com/online-banking/dispute-claim.go\n[http://45.154.255.89/bofa-login/portal.php?id=8291]\n\nFailure to verify within 6 hours will authorize automatic fund settlement under\nfederal regulation.\n\nBank of America, N.A. Member FDIC. Equal Housing Lender © 2026 Bank of America\nCorporation.",
+    "htmlBody": "<!DOCTYPE html>\n<html>\n<body>\n<div style=\"font-family: Arial, sans-serif; max-width: 600px; border: 1px solid #ddd; padding: 20px;\">\n  <div style=\"background-color: #e31837; color: white; padding: 15px; font-weight: bold; font-size: 18px;\">\n    Bank of America &bull; Fraud Prevention Alert\n  </div>\n  <p style=\"margin-top: 20px;\">Dear Account Holder,</p>\n  <p>An outgoing electronic wire transfer in the amount of <strong>$4,250.00 USD</strong> was initiated from your commercial checking account on September 10, 2026.</p>\n  <p>If you did not authorize this transaction, please dispute the withdrawal and re-verify your online banking authentication credentials immediately:</p>\n  <p style=\"margin: 20px 0;\">\n    <a href=\"http://45.154.255.89/bofa-login/portal.php?id=8291\" style=\"color: #0056b3; font-weight: bold;\">\n      https://www.bankofamerica.com/online-banking/dispute-claim.go\n    </a>\n  </p>\n  <p>Failure to verify within 6 hours will authorize automatic fund settlement under federal regulation.</p>\n  <p style=\"color: #777; font-size: 11px;\">Bank of America, N.A. Member FDIC. Equal Housing Lender &copy; 2026 Bank of America Corporation.</p>\n</div>\n</body>\n</html>",
+    "normalizedText": "Bank of America • Fraud Prevention Alert Dear Account Holder, An outgoing electronic wire transfer in the amount of $4,250.00 USD was\ninitiated from your commercial checking account on September 10, 2026. If you did not authorize this transaction, please dispute the withdrawal and\nre-verify your online banking authentication credentials immediately: https://www.bankofamerica.com/online-banking/dispute-claim.go\n[http://45.154.255.89/bofa-login/portal.php?id=8291] Failure to verify within 6 hours will authorize automatic fund settlement under\nfederal regulation. Bank of America, N.A. Member FDIC. Equal Housing Lender © 2026 Bank of America\nCorporation.",
+    "authentication": {
+      "spf": {
+        "status": "FAIL",
+        "details": "SPF recorded as FAIL via Authentication-Results",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "FAIL",
+        "details": "DKIM status: FAIL from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "FAIL",
+        "details": "DMARC policy failed: alignment between From domain and SPF/DKIM was rejected",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": true,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": true,
+      "detectedMismatches": [
+        "Display name claims 'Bank of America Fraud Prevention' (bank of america) but sent from unrelated domain 'bofa-online-alert.tk'",
+        "Message-ID domain ('alert-dispatcher.link') deviates from From domain ('bofa-online-alert.tk')"
+      ]
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "45.154.255.89",
+        "hostname": "mta-out.bulletproof-servers.net",
+        "byHost": "mx.enterprise-gateway.net",
+        "timestamp": "Thu, 10 Sep 2026 07:15:20 -0700",
+        "rawHeader": "from mta-out.bulletproof-servers.net (mta-out.bulletproof-servers.net [45.154.255.89]) by mx.enterprise-gateway.net with ESMTP id a91827364; Thu, 10 Sep 2026 07:15:20 -0700",
+        "trustAssessment": "earliest observed IP",
+        "country": "Netherlands",
+        "city": "Amsterdam",
+        "asn": "AS57043",
+        "org": "Unverified VPN Gateway",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "45.154.255.89",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Netherlands",
+        "countryCode": "NL",
+        "region": "North Holland",
+        "city": "Amsterdam",
+        "isp": "Hostkey B.V.",
+        "asn": "AS57043",
+        "org": "Unverified VPN Gateway",
+        "isVpnOrProxy": true,
+        "reputationStatus": "SUSPICIOUS",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [
+      {
+        "id": "url-5d11223b",
+        "rawUrl": "http://45.154.255.89/bofa-login/portal.php?id=8291",
+        "protocol": "http:",
+        "domain": "45.154.255.89",
+        "path": "/bofa-login/portal.php",
+        "queryParams": {
+          "id": "8291"
+        },
+        "isHttps": false,
+        "hasIpHost": true,
+        "isShortened": false,
+        "isLookalike": false,
+        "isSuspiciousTld": false,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorText": "https://www.bankofamerica.com/online-banking/dispute-claim.go",
+        "anchorMismatch": true,
+        "verdict": "MALICIOUS",
+        "threatIntelStatus": "SUSPICIOUS",
+        "reasons": [
+          "Hyperlink text displays 'https://www.bankofamerica.com/online-banking/dispute-claim.go' but actually links to completely different host '45.154.255.89'",
+          "URL uses direct numerical IP address (45.154.255.89) instead of standard domain name",
+          "Unencrypted plain HTTP transmission"
+        ]
+      },
+      {
+        "id": "url-f6563d4d",
+        "rawUrl": "https://www.bankofamerica.com/online-banking/dispute-claim.go",
+        "protocol": "https:",
+        "domain": "www.bankofamerica.com",
+        "path": "/online-banking/dispute-claim.go",
+        "queryParams": {},
+        "isHttps": true,
+        "hasIpHost": false,
+        "isShortened": false,
+        "isLookalike": false,
+        "isSuspiciousTld": false,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorMismatch": false,
+        "verdict": "SAFE",
+        "threatIntelStatus": "NOT FOUND",
+        "reasons": []
+      },
+      {
+        "id": "url-6d2ded4f",
+        "rawUrl": "http://45.154.255.89/bofa-login/portal.php?id=8291]",
+        "protocol": "http:",
+        "domain": "45.154.255.89",
+        "path": "/bofa-login/portal.php",
+        "queryParams": {
+          "id": "8291]"
+        },
+        "isHttps": false,
+        "hasIpHost": true,
+        "isShortened": false,
+        "isLookalike": false,
+        "isSuspiciousTld": false,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorMismatch": false,
+        "verdict": "SUSPICIOUS",
+        "threatIntelStatus": "NOT FOUND",
+        "reasons": [
+          "URL uses direct numerical IP address (45.154.255.89) instead of standard domain name",
+          "Unencrypted plain HTTP transmission"
+        ]
+      }
+    ],
+    "domains": [
+      {
+        "domain": "bofa-online-alert.tk",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": true,
+        "lookalikeTarget": "bankofamerica",
+        "suspiciousTld": true,
+        "entropy": 3.622,
+        "flags": [
+          "Typosquatting/brand impersonation match: 'bankofamerica'",
+          "High abuse rate top-level domain: .tk"
+        ]
+      },
+      {
+        "domain": "45.154.255.89",
+        "source": "url",
+        "hasMx": false,
+        "isLookalike": false,
+        "suspiciousTld": false,
+        "entropy": 2.565,
+        "flags": []
+      },
+      {
+        "domain": "www.bankofamerica.com",
+        "source": "url",
+        "hasMx": false,
+        "isLookalike": false,
+        "suspiciousTld": false,
+        "entropy": 3.559,
+        "flags": []
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 25,
+      "urgencyKeywords": [
+        "immediately"
+      ],
+      "financialScore": 80,
+      "financialKeywords": [
+        "wire",
+        "transfer",
+        "ach",
+        "transaction"
+      ],
+      "credentialScore": 100,
+      "credentialKeywords": [
+        "login",
+        "authentication",
+        "credentials",
+        "portal"
+      ],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Phishing",
+      "confidence": 0.9225,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.0014,
+        "Phishing": 0.9225,
+        "BEC/Fraud": 0.0572,
+        "Spam": 0.0018,
+        "Suspicious": 0.0171
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[tech] anchor_text_url_mismatch",
+          "weight": 1.853,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_credential_harvest_words",
+          "weight": 1.594,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] auth_security_failure",
+          "weight": 1.402,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] frequent_credential_terms",
+          "weight": 0.656,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] frequent_financial_terms",
+          "weight": -0.358,
+          "value": 1,
+          "impact": "decreases_risk"
+        },
+        {
+          "feature": "[tech] has_urgency_words",
+          "weight": 0.219,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] verify_identity_phrase",
+          "weight": 0.154,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "bank",
+          "weight": 0.176,
+          "value": 0.754,
+          "impact": "increases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.9934
+      }
+    },
+    "risk": {
+      "score": 100,
+      "category": "Critical",
+      "positiveFactors": [
+        {
+          "points": 22,
+          "rule": "AUTH_DMARC_FAIL",
+          "description": "DMARC policy validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "AUTH_SPF_FAIL",
+          "description": "SPF sender validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 15,
+          "rule": "AUTH_DKIM_FAIL",
+          "description": "DKIM cryptographic signature verification failed",
+          "category": "authentication"
+        },
+        {
+          "points": 25,
+          "rule": "IDENTITY_DISPLAY_SPOOF",
+          "description": "Display name impersonates known executive or organization while sender domain is external",
+          "category": "sender"
+        },
+        {
+          "points": 28,
+          "rule": "IDENTITY_LOOKALIKE_DOMAIN",
+          "description": "Sender domain matches typosquatting or brand impersonation pattern",
+          "category": "sender"
+        },
+        {
+          "points": 35,
+          "rule": "URL_KNOWN_MALICIOUS",
+          "description": "Extracted URL flagged by threat intelligence database",
+          "category": "links"
+        },
+        {
+          "points": 26,
+          "rule": "URL_ANCHOR_MISMATCH",
+          "description": "HTML hyperlink text shows trusted domain but destination href points to an external or suspicious host",
+          "category": "links"
+        },
+        {
+          "points": 20,
+          "rule": "URL_RAW_IP_HOST",
+          "description": "URL points directly to a raw IP address rather than a domain",
+          "category": "links"
+        },
+        {
+          "points": 22,
+          "rule": "NLP_CREDENTIAL_HARVEST",
+          "description": "Content requests password, account verification, or login credentials",
+          "category": "content"
+        },
+        {
+          "points": 24,
+          "rule": "NLP_FINANCIAL_DIVERSION",
+          "description": "Content requests urgent wire transfer, ACH bank update, or payment diversion",
+          "category": "content"
+        },
+        {
+          "points": 22,
+          "rule": "ML_HIGH_CONF_PHISHING",
+          "description": "Machine learning model predicted Phishing with high confidence",
+          "category": "ml"
+        }
+      ],
+      "negativeFactors": [],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +257 risk points from 11 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 100/100 (Critical)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "High-confidence Business Email Compromise (BEC) and financial fraud pattern detected in message titled \"Security Alert: Bank of America Suspicious ACH Transfer Flagged\". The sender claims identity \"Bank of America Fraud Prevention\" but exhibits sender impersonation indicators and urgent payment diversion phrasing without verified cryptographic domain alignment.",
+      "threatActorTTPs": "TTP Analysis: T1566.002 (Spearphishing Link) / T1566.001 (Spearphishing Attachment) / T1656 (Impersonation). Actor utilized urgent deadline lures to bypass critical thinking, obfuscated destination links, and bypassed standard SPF/DMARC filters via external relay infrastructure.",
+      "evidenceHighlights": [
+        "SPF sender authorization failed",
+        "DMARC domain policy rejected sender alignment",
+        "Display name impersonation: claimed brand/executive but sent from 'bofa-online-alert.tk'",
+        "Hyperlink anchor text does not match underlying href target (credential lure)",
+        "Content actively solicits login credentials, password reset, or portal authentication",
+        "Content solicits urgent wire transfer, bank account re-routing, or invoice payments"
+      ],
+      "recommendedActions": [
+        "Immediately quarantine message across tenant mailboxes via Exchange/Google Admin",
+        "Block sender address and origin IP in mail gateway / firewall edge rules",
+        "Reset credentials immediately for any recipient who accessed embedded URLs",
+        "Add extracted malicious domains and attachment hashes to EDR/SIEM watchlists"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:23:39.500Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "System (Demo Seed)",
+        "details": "Ingested bank_credential_harvest.eml (SHA-256: 0e6c47d323234a41...). Initial risk score: 100/100 (Critical)."
+      }
+    ]
+  },
+  {
+    "id": "08147e50-1dbd-49f7-b483-bffa3eefac33",
+    "caseId": "CASE-2026-6345",
+    "evidenceId": "EVID-770B1184",
+    "createdAt": "2026-09-10T17:23:39.808Z",
+    "updatedAt": "2026-09-10T17:23:39.808Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "CRITICAL",
+      "BEC/FRAUD",
+      "DEMO_DATA",
+      "PAYMENT DIVERSION"
+    ],
+    "rawEmlContent": "Received: from mail.compromised-vps.com (mail.compromised-vps.com [103.145.13.22])\n    by mx.enterprise-gateway.net with ESMTP id c9812739;\n    Thu, 10 Sep 2026 06:40:00 -0700\nAuthentication-Results: mx.enterprise-gateway.net;\n    spf=fail; dkim=none; dmarc=fail\nFrom: \"Accounts Receivable - Acme Industrial\" <billing@supplier-billing-dept.co>\nReply-To: <accounts-remittance@supplier-billing-dept.co>\nTo: \"Accounts Payable\" <ap@enterprise.org>\nSubject: NOTICE: Updated Banking & Remittance Instructions for Invoice #INV-8910\nDate: Thu, 10 Sep 2026 06:39:15 -0700\nMessage-ID: <invoice-update-9281928@supplier-billing-dept.co>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=\"UTF-8\"\n\nGood morning Accounts Payable Team,\n\nPlease take note that due to our mid-year banking audit and treasury restructuring, Acme Industrial has transitioned all commercial ACH and wire collections to our new depository institution effective immediately.\n\nOur previous account at JPMorgan Chase has been closed. Please update your vendor records to remit payment for pending Invoice #INV-8910 ($64,250.00) to our updated account:\n\nBank Name: Coastal Horizon Commercial Bank\nRouting Number: 021000021\nAccount Number: 9821-4820-1928\nBeneficiary: Acme Strategic Collections LLC\n\nPlease confirm receipt of this update so our credit department does not place a hold on upcoming hardware shipments.\n\nWarm regards,\nMarcus Vance\nSenior Director, Accounts Receivable\nAcme Industrial Supply Group",
+    "originalFilename": "vendor_payment_diversion.eml",
+    "fileSizeBytes": 1468,
+    "sha256": "7c53cc394a0bcae73301585ef4b9ce7331592afaf4cf37779addf27a8af53966",
+    "subject": "NOTICE: Updated Banking & Remittance Instructions for Invoice #INV-8910",
+    "from": {
+      "name": "Accounts Receivable - Acme Industrial",
+      "address": "billing@supplier-billing-dept.co",
+      "domain": "supplier-billing-dept.co"
+    },
+    "to": [
+      "ap@enterprise.org"
+    ],
+    "cc": [],
+    "replyTo": "accounts-remittance@supplier-billing-dept.co",
+    "messageId": "<invoice-update-9281928@supplier-billing-dept.co>",
+    "date": "2026-09-10T13:39:15.000Z",
+    "plainTextBody": "Good morning Accounts Payable Team,\n\nPlease take note that due to our mid-year banking audit and treasury restructuring, Acme Industrial has transitioned all commercial ACH and wire collections to our new depository institution effective immediately.\n\nOur previous account at JPMorgan Chase has been closed. Please update your vendor records to remit payment for pending Invoice #INV-8910 ($64,250.00) to our updated account:\n\nBank Name: Coastal Horizon Commercial Bank\nRouting Number: 021000021\nAccount Number: 9821-4820-1928\nBeneficiary: Acme Strategic Collections LLC\n\nPlease confirm receipt of this update so our credit department does not place a hold on upcoming hardware shipments.\n\nWarm regards,\nMarcus Vance\nSenior Director, Accounts Receivable\nAcme Industrial Supply Group",
+    "normalizedText": "Good morning Accounts Payable Team, Please take note that due to our mid-year banking audit and treasury restructuring, Acme Industrial has transitioned all commercial ACH and wire collections to our new depository institution effective immediately. Our previous account at JPMorgan Chase has been closed. Please update your vendor records to remit payment for pending Invoice #INV-8910 ($64,250.00) to our updated account: Bank Name: Coastal Horizon Commercial Bank\nRouting Number: 021000021\nAccount Number: 9821-4820-1928\nBeneficiary: Acme Strategic Collections LLC Please confirm receipt of this update so our credit department does not place a hold on upcoming hardware shipments. Warm regards,\nMarcus Vance\nSenior Director, Accounts Receivable\nAcme Industrial Supply Group",
+    "authentication": {
+      "spf": {
+        "status": "FAIL",
+        "details": "SPF recorded as FAIL via Authentication-Results",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "NOT_VERIFIED",
+        "details": "DKIM status: NONE from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "FAIL",
+        "details": "DMARC policy failed: alignment between From domain and SPF/DKIM was rejected",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": false,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": []
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "103.145.13.22",
+        "hostname": "mail.compromised-vps.com",
+        "byHost": "mx.enterprise-gateway.net",
+        "timestamp": "Thu, 10 Sep 2026 06:40:00 -0700",
+        "rawHeader": "from mail.compromised-vps.com (mail.compromised-vps.com [103.145.13.22]) by mx.enterprise-gateway.net with ESMTP id c9812739; Thu, 10 Sep 2026 06:40:00 -0700",
+        "trustAssessment": "earliest observed IP",
+        "country": "Vietnam",
+        "city": "Hanoi",
+        "asn": "AS7552",
+        "org": "Compromised Broadband Dynamic Range",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "103.145.13.22",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Vietnam",
+        "countryCode": "VN",
+        "region": "Hanoi",
+        "city": "Hanoi",
+        "isp": "Viettel Group",
+        "asn": "AS7552",
+        "org": "Compromised Broadband Dynamic Range",
+        "isVpnOrProxy": false,
+        "reputationStatus": "SUSPICIOUS",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [],
+    "domains": [
+      {
+        "domain": "supplier-billing-dept.co",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": false,
+        "suspiciousTld": false,
+        "entropy": 3.824,
+        "flags": [
+          "High lexical entropy (3.824): potential DGA or random character generation"
+        ]
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 25,
+      "urgencyKeywords": [
+        "immediately"
+      ],
+      "financialScore": 100,
+      "financialKeywords": [
+        "invoice",
+        "wire",
+        "ach",
+        "payment",
+        "remit",
+        "routing number"
+      ],
+      "credentialScore": 0,
+      "credentialKeywords": [],
+      "impersonationScore": 75,
+      "impersonationKeywords": [
+        "director",
+        "vendor",
+        "treasury"
+      ],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "BEC/Fraud",
+      "confidence": 0.9818,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.0005,
+        "Phishing": 0.0156,
+        "BEC/Fraud": 0.9818,
+        "Spam": 0.0008,
+        "Suspicious": 0.0013
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[tech] executive_hierarchy_terms",
+          "weight": 1.4,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_credential_harvest_words",
+          "weight": 1.202,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_urgency_words",
+          "weight": 0.699,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] auth_security_failure",
+          "weight": 0.551,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_financial_words",
+          "weight": 0.5,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "account",
+          "weight": 1.134,
+          "value": 0.431,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] frequent_financial_terms",
+          "weight": 0.377,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "number",
+          "weight": 0.881,
+          "value": 0.336,
+          "impact": "increases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.9988
+      }
+    },
+    "risk": {
+      "score": 100,
+      "category": "Critical",
+      "positiveFactors": [
+        {
+          "points": 22,
+          "rule": "AUTH_DMARC_FAIL",
+          "description": "DMARC policy validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "AUTH_SPF_FAIL",
+          "description": "SPF sender validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 24,
+          "rule": "NLP_FINANCIAL_DIVERSION",
+          "description": "Content requests urgent wire transfer, ACH bank update, or payment diversion",
+          "category": "content"
+        },
+        {
+          "points": 20,
+          "rule": "NLP_EXEC_IMPERSONATION",
+          "description": "Content references executive hierarchy (CEO/CFO/Management) demanding immediate action",
+          "category": "content"
+        },
+        {
+          "points": 25,
+          "rule": "ML_HIGH_CONF_BEC",
+          "description": "Machine learning model predicted BEC/Fraud with high confidence",
+          "category": "ml"
+        }
+      ],
+      "negativeFactors": [],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +109 risk points from 5 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 100/100 (Critical)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "High-confidence Business Email Compromise (BEC) and financial fraud pattern detected in message titled \"NOTICE: Updated Banking & Remittance Instructions for Invoice #INV-8910\". The sender claims identity \"Accounts Receivable - Acme Industrial\" but exhibits sender impersonation indicators and urgent payment diversion phrasing without verified cryptographic domain alignment.",
+      "threatActorTTPs": "TTP Analysis: T1566.002 (Spearphishing Link) / T1566.001 (Spearphishing Attachment) / T1656 (Impersonation). Actor utilized urgent deadline lures to bypass critical thinking, obfuscated destination links, and bypassed standard SPF/DMARC filters via external relay infrastructure.",
+      "evidenceHighlights": [
+        "SPF sender authorization failed",
+        "DMARC domain policy rejected sender alignment",
+        "Content solicits urgent wire transfer, bank account re-routing, or invoice payments"
+      ],
+      "recommendedActions": [
+        "Immediately quarantine message across tenant mailboxes via Exchange/Google Admin",
+        "Block sender address and origin IP in mail gateway / firewall edge rules",
+        "Reset credentials immediately for any recipient who accessed embedded URLs",
+        "Add extracted malicious domains and attachment hashes to EDR/SIEM watchlists"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:23:39.808Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "System (Demo Seed)",
+        "details": "Ingested vendor_payment_diversion.eml (SHA-256: 7c53cc394a0bcae7...). Initial risk score: 100/100 (Critical)."
+      }
+    ]
+  },
+  {
+    "id": "bc164689-0b4c-40e6-a588-3503438d49f2",
+    "caseId": "CASE-2026-6009",
+    "evidenceId": "EVID-21DDCF6B",
+    "createdAt": "2026-09-10T17:23:40.108Z",
+    "updatedAt": "2026-09-10T17:23:40.108Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "CRITICAL",
+      "SUSPICIOUS",
+      "MALICIOUS_ATTACHMENT",
+      "DEMO_DATA",
+      "MALWARE LURE"
+    ],
+    "rawEmlContent": "Received: from mail.bulletproof-vps.ro (mail.bulletproof-vps.ro [91.240.118.15])\n    by mx.enterprise-gateway.net with ESMTP id m81928371;\n    Thu, 10 Sep 2026 05:22:10 -0700\nAuthentication-Results: mx.enterprise-gateway.net;\n    spf=fail; dkim=fail; dmarc=fail\nFrom: \"Xerox WorkCentre 7845\" <scanner-relay@corporate-scanner.xyz>\nTo: <recipient@enterprise.org>\nSubject: Scanned Document Delivery: Remittance_Advice_September_2026.pdf.exe\nDate: Thu, 10 Sep 2026 05:21:40 -0700\nMessage-ID: <scan-982187391823@corporate-scanner.xyz>\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"----=_Part_98218_8921\"\n\n------=_Part_98218_8921\nContent-Type: text/plain; charset=\"UTF-8\"\n\nAttached is a scanned document processed by the department multi-function scanner.\n\nDevice: Xerox WorkCentre 7845\nPages: 4\nResolution: 300 DPI\nFormat: PDF\n\nPlease review the attached remittance confirmation.\n------=_Part_98218_8921\nContent-Type: application/x-msdownload; name=\"Remittance_Advice_September_2026.pdf.exe\"\nContent-Transfer-Encoding: base64\nContent-Disposition: attachment; filename=\"Remittance_Advice_September_2026.pdf.exe\"\n\nTVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAA2AAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v\nZGUuDQ0KJAAAAAAAAABQRQAATAEDAAAAAAAAAAAAAAAAAAAA\n------=_Part_98218_8921--",
+    "originalFilename": "malware_double_extension.eml",
+    "fileSizeBytes": 1348,
+    "sha256": "5572d5eda3bbb0febcc204c9e23e5aa869a7ed805f6d08f289a8f72b7fb10f88",
+    "subject": "Scanned Document Delivery: Remittance_Advice_September_2026.pdf.exe",
+    "from": {
+      "name": "Xerox WorkCentre 7845",
+      "address": "scanner-relay@corporate-scanner.xyz",
+      "domain": "corporate-scanner.xyz"
+    },
+    "to": [
+      "recipient@enterprise.org"
+    ],
+    "cc": [],
+    "messageId": "<scan-982187391823@corporate-scanner.xyz>",
+    "date": "2026-09-10T12:21:40.000Z",
+    "plainTextBody": "Attached is a scanned document processed by the department multi-function scanner.\n\nDevice: Xerox WorkCentre 7845\nPages: 4\nResolution: 300 DPI\nFormat: PDF\n\nPlease review the attached remittance confirmation.",
+    "normalizedText": "Attached is a scanned document processed by the department multi-function scanner. Device: Xerox WorkCentre 7845\nPages: 4\nResolution: 300 DPI\nFormat: PDF Please review the attached remittance confirmation.",
+    "authentication": {
+      "spf": {
+        "status": "FAIL",
+        "details": "SPF recorded as FAIL via Authentication-Results",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "FAIL",
+        "details": "DKIM status: FAIL from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "FAIL",
+        "details": "DMARC policy failed: alignment between From domain and SPF/DKIM was rejected",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": false,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": []
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "91.240.118.15",
+        "hostname": "mail.bulletproof-vps.ro",
+        "byHost": "mx.enterprise-gateway.net",
+        "timestamp": "Thu, 10 Sep 2026 05:22:10 -0700",
+        "rawHeader": "from mail.bulletproof-vps.ro (mail.bulletproof-vps.ro [91.240.118.15]) by mx.enterprise-gateway.net with ESMTP id m81928371; Thu, 10 Sep 2026 05:22:10 -0700",
+        "trustAssessment": "earliest observed IP",
+        "country": "Romania",
+        "city": "Bucharest",
+        "asn": "AS60117",
+        "org": "Known Malicious Infrastructure",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "91.240.118.15",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Romania",
+        "countryCode": "RO",
+        "region": "Bucharest",
+        "city": "Bucharest",
+        "isp": "HostSailor Host",
+        "asn": "AS60117",
+        "org": "Known Malicious Infrastructure",
+        "isVpnOrProxy": false,
+        "reputationStatus": "KNOWN MALICIOUS",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [],
+    "domains": [
+      {
+        "domain": "corporate-scanner.xyz",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": false,
+        "suspiciousTld": true,
+        "entropy": 3.69,
+        "flags": [
+          "High abuse rate top-level domain: .xyz"
+        ]
+      }
+    ],
+    "attachments": [
+      {
+        "id": "att-c636009c",
+        "filename": "Remittance_Advice_September_2026.pdf.exe",
+        "extension": "exe",
+        "mimeType": "application/x-msdownload",
+        "sizeBytes": 150,
+        "sha256": "c340c4e4ecfa96503f0a4678a0c4373ea436cbe296e2e447956c718c799bda6c",
+        "isExecutable": true,
+        "isMacroEnabled": false,
+        "isDoubleExtension": true,
+        "isSuspiciousArchive": false,
+        "isMimeMismatch": false,
+        "verdict": "MALICIOUS",
+        "flags": [
+          "Double extension masquerade detected",
+          "Direct executable file payload"
+        ]
+      }
+    ],
+    "nlp": {
+      "urgencyScore": 0,
+      "urgencyKeywords": [],
+      "financialScore": 40,
+      "financialKeywords": [
+        "ach",
+        "remit"
+      ],
+      "credentialScore": 0,
+      "credentialKeywords": [],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Suspicious",
+      "confidence": 0.888,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.0427,
+        "Phishing": 0.0196,
+        "BEC/Fraud": 0.0309,
+        "Spam": 0.0187,
+        "Suspicious": 0.888
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[tech] attachment_payload_present",
+          "weight": 1.617,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "attached",
+          "weight": 1.026,
+          "value": 0.587,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] auth_security_failure",
+          "weight": 0.498,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "document",
+          "weight": 0.57,
+          "value": 0.704,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "please",
+          "weight": 0.336,
+          "value": 0.293,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "review",
+          "weight": 0.224,
+          "value": 0.273,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_financial_words",
+          "weight": -0.031,
+          "value": 1,
+          "impact": "decreases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.7258
+      }
+    },
+    "risk": {
+      "score": 100,
+      "category": "Critical",
+      "positiveFactors": [
+        {
+          "points": 22,
+          "rule": "AUTH_DMARC_FAIL",
+          "description": "DMARC policy validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "AUTH_SPF_FAIL",
+          "description": "SPF sender validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 15,
+          "rule": "AUTH_DKIM_FAIL",
+          "description": "DKIM cryptographic signature verification failed",
+          "category": "authentication"
+        },
+        {
+          "points": 24,
+          "rule": "NLP_FINANCIAL_DIVERSION",
+          "description": "Content requests urgent wire transfer, ACH bank update, or payment diversion",
+          "category": "content"
+        },
+        {
+          "points": 35,
+          "rule": "ATT_DOUBLE_EXTENSION",
+          "description": "Double file extension masquerade detected (e.g., .pdf.exe)",
+          "category": "attachments"
+        },
+        {
+          "points": 35,
+          "rule": "ATT_EXECUTABLE_PAYLOAD",
+          "description": "Contains executable file payload (.exe, .scr, .bat, .vbs)",
+          "category": "attachments"
+        }
+      ],
+      "negativeFactors": [],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +149 risk points from 6 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 100/100 (Critical)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "Suspicious inbound communication with elevated risk score (100/100). Deterministic inspection flagged multiple security discrepancies including authentication failures, anomalous infrastructure relay hops, and elevated social engineering triggers.",
+      "threatActorTTPs": "TTP Analysis: T1566.002 (Spearphishing Link) / T1566.001 (Spearphishing Attachment) / T1656 (Impersonation). Actor utilized urgent deadline lures to bypass critical thinking, obfuscated destination links, and bypassed standard SPF/DMARC filters via external relay infrastructure.",
+      "evidenceHighlights": [
+        "SPF sender authorization failed",
+        "DMARC domain policy rejected sender alignment",
+        "Untrusted attachment payload with high-risk executable or double extension",
+        "Content solicits urgent wire transfer, bank account re-routing, or invoice payments"
+      ],
+      "recommendedActions": [
+        "Immediately quarantine message across tenant mailboxes via Exchange/Google Admin",
+        "Block sender address and origin IP in mail gateway / firewall edge rules",
+        "Reset credentials immediately for any recipient who accessed embedded URLs",
+        "Add extracted malicious domains and attachment hashes to EDR/SIEM watchlists"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:23:40.108Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "System (Demo Seed)",
+        "details": "Ingested malware_double_extension.eml (SHA-256: 5572d5eda3bbb0fe...). Initial risk score: 100/100 (Critical)."
+      }
+    ]
+  },
+  {
+    "id": "e5dea8dd-575f-4620-842e-48a59efdbbfd",
+    "caseId": "CASE-2026-1418",
+    "evidenceId": "EVID-96FFFE80",
+    "createdAt": "2026-09-10T17:23:40.442Z",
+    "updatedAt": "2026-09-10T17:27:25.914Z",
+    "status": "UNDER_INVESTIGATION",
+    "analystNotes": "",
+    "tags": [
+      "CRITICAL",
+      "SUSPICIOUS",
+      "DISPLAY_SPOOF",
+      "DEMO_DATA",
+      "LOOKALIKE DOMAIN"
+    ],
+    "rawEmlContent": "Received: from mail.fake-gateway.top (mail.fake-gateway.top [185.220.101.5])\n    by mx.enterprise-gateway.net with ESMTP id p81928374;\n    Thu, 10 Sep 2026 04:10:00 -0700\nAuthentication-Results: mx.enterprise-gateway.net;\n    spf=fail; dkim=fail; dmarc=fail\nFrom: \"PayPal Customer Protection\" <service@service-paypa1-security.xyz>\nReply-To: <dispute-center@service-paypa1-security.xyz>\nTo: <consumer@enterprise.org>\nSubject: Security Notification: Your PayPal payment was sent to Coinmama Ltd\nDate: Thu, 10 Sep 2026 04:09:12 -0700\nMessage-ID: <pp-91829182918@service-paypa1-security.xyz>\nMIME-Version: 1.0\nContent-Type: text/html; charset=\"UTF-8\"\n\n<!DOCTYPE html>\n<html>\n<body>\n<div style=\"font-family: Arial, sans-serif; padding: 20px;\">\n  <h2 style=\"color: #003087;\">You sent a payment of $899.00 USD to Coinmama Cryptocurrency Ltd</h2>\n  <p>Transaction ID: 9812-4820-1928</p>\n  <p>If you did not authorize this payment, you have <strong>2 hours</strong> to cancel this transaction and recover your funds.</p>\n  <p>\n    <a href=\"https://service-paypa1-security.xyz/dispute?tx=981248201928\" style=\"background-color: #0070ba; color: white; padding: 12px 20px; text-decoration: none; border-radius: 20px; font-weight: bold;\">\n      Cancel Transaction &amp; Refund Payment\n    </a>\n  </p>\n  <p style=\"font-size: 11px; color: #888;\">PayPal Pte. Ltd. is licensed by the Monetary Authority of Singapore as a Major Payment Institution.</p>\n</div>\n</body>\n</html>",
+    "originalFilename": "paypal_lookalike_domain.eml",
+    "fileSizeBytes": 1456,
+    "sha256": "b67c6d1b462b6bccb6a46c7e46579a53fcacaab0eedc61872677ff7abd9bce04",
+    "subject": "Security Notification: Your PayPal payment was sent to Coinmama Ltd",
+    "from": {
+      "name": "PayPal Customer Protection",
+      "address": "service@service-paypa1-security.xyz",
+      "domain": "service-paypa1-security.xyz"
+    },
+    "to": [
+      "consumer@enterprise.org"
+    ],
+    "cc": [],
+    "replyTo": "dispute-center@service-paypa1-security.xyz",
+    "messageId": "<pp-91829182918@service-paypa1-security.xyz>",
+    "date": "2026-09-10T11:09:12.000Z",
+    "plainTextBody": "YOU SENT A PAYMENT OF $899.00 USD TO COINMAMA CRYPTOCURRENCY LTD\n\nTransaction ID: 9812-4820-1928\n\nIf you did not authorize this payment, you have 2 hours to cancel this\ntransaction and recover your funds.\n\nCancel Transaction & Refund Payment\n[https://service-paypa1-security.xyz/dispute?tx=981248201928]\n\nPayPal Pte. Ltd. is licensed by the Monetary Authority of Singapore as a Major\nPayment Institution.",
+    "htmlBody": "<!DOCTYPE html>\n<html>\n<body>\n<div style=\"font-family: Arial, sans-serif; padding: 20px;\">\n  <h2 style=\"color: #003087;\">You sent a payment of $899.00 USD to Coinmama Cryptocurrency Ltd</h2>\n  <p>Transaction ID: 9812-4820-1928</p>\n  <p>If you did not authorize this payment, you have <strong>2 hours</strong> to cancel this transaction and recover your funds.</p>\n  <p>\n    <a href=\"https://service-paypa1-security.xyz/dispute?tx=981248201928\" style=\"background-color: #0070ba; color: white; padding: 12px 20px; text-decoration: none; border-radius: 20px; font-weight: bold;\">\n      Cancel Transaction &amp; Refund Payment\n    </a>\n  </p>\n  <p style=\"font-size: 11px; color: #888;\">PayPal Pte. Ltd. is licensed by the Monetary Authority of Singapore as a Major Payment Institution.</p>\n</div>\n</body>\n</html>",
+    "normalizedText": "YOU SENT A PAYMENT OF $899.00 USD TO COINMAMA CRYPTOCURRENCY LTD Transaction ID: 9812-4820-1928 If you did not authorize this payment, you have 2 hours to cancel this\ntransaction and recover your funds. Cancel Transaction & Refund Payment\n[https://service-paypa1-security.xyz/dispute?tx=981248201928] PayPal Pte. Ltd. is licensed by the Monetary Authority of Singapore as a Major\nPayment Institution.",
+    "authentication": {
+      "spf": {
+        "status": "FAIL",
+        "details": "SPF recorded as FAIL via Authentication-Results",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "FAIL",
+        "details": "DKIM status: FAIL from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "FAIL",
+        "details": "DMARC policy failed: alignment between From domain and SPF/DKIM was rejected",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": true,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": [
+        "Display name claims 'PayPal Customer Protection' (paypal) but sent from unrelated domain 'service-paypa1-security.xyz'"
+      ]
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "185.220.101.5",
+        "hostname": "mail.fake-gateway.top",
+        "byHost": "mx.enterprise-gateway.net",
+        "timestamp": "Thu, 10 Sep 2026 04:10:00 -0700",
+        "rawHeader": "from mail.fake-gateway.top (mail.fake-gateway.top [185.220.101.5]) by mx.enterprise-gateway.net with ESMTP id p81928374; Thu, 10 Sep 2026 04:10:00 -0700",
+        "trustAssessment": "earliest observed IP",
+        "country": "Germany",
+        "city": "Frankfurt",
+        "asn": "AS205100",
+        "org": "Tor Exit Node Relay",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "185.220.101.5",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Germany",
+        "countryCode": "DE",
+        "region": "Hesse",
+        "city": "Frankfurt",
+        "isp": "Zwiebelfreunde e.V.",
+        "asn": "AS205100",
+        "org": "Tor Exit Node Relay",
+        "isVpnOrProxy": true,
+        "reputationStatus": "SUSPICIOUS",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [
+      {
+        "id": "url-277bcd77",
+        "rawUrl": "https://service-paypa1-security.xyz/dispute?tx=981248201928",
+        "protocol": "https:",
+        "domain": "service-paypa1-security.xyz",
+        "path": "/dispute",
+        "queryParams": {
+          "tx": "981248201928"
+        },
+        "isHttps": true,
+        "hasIpHost": false,
+        "isShortened": false,
+        "isLookalike": true,
+        "lookalikeTarget": "paypal",
+        "isSuspiciousTld": true,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorText": "Cancel Transaction &amp; Refund Payment",
+        "anchorMismatch": false,
+        "verdict": "MALICIOUS",
+        "threatIntelStatus": "SUSPICIOUS",
+        "reasons": [
+          "Lookalike/typosquat domain detected targeting 'paypal'",
+          "Registered under high-abuse TLD (.xyz)"
+        ]
+      },
+      {
+        "id": "url-02addf31",
+        "rawUrl": "https://service-paypa1-security.xyz/dispute?tx=981248201928]",
+        "protocol": "https:",
+        "domain": "service-paypa1-security.xyz",
+        "path": "/dispute",
+        "queryParams": {
+          "tx": "981248201928]"
+        },
+        "isHttps": true,
+        "hasIpHost": false,
+        "isShortened": false,
+        "isLookalike": true,
+        "lookalikeTarget": "paypal",
+        "isSuspiciousTld": true,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorMismatch": false,
+        "verdict": "MALICIOUS",
+        "threatIntelStatus": "SUSPICIOUS",
+        "reasons": [
+          "Lookalike/typosquat domain detected targeting 'paypal'",
+          "Registered under high-abuse TLD (.xyz)"
+        ]
+      }
+    ],
+    "domains": [
+      {
+        "domain": "service-paypa1-security.xyz",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": true,
+        "lookalikeTarget": "paypal",
+        "suspiciousTld": true,
+        "entropy": 3.884,
+        "flags": [
+          "Typosquatting/brand impersonation match: 'paypal'",
+          "High abuse rate top-level domain: .xyz",
+          "High lexical entropy (3.884): potential DGA or random character generation"
+        ]
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 0,
+      "urgencyKeywords": [],
+      "financialScore": 60,
+      "financialKeywords": [
+        "payment",
+        "refund",
+        "transaction"
+      ],
+      "credentialScore": 0,
+      "credentialKeywords": [],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Suspicious",
+      "confidence": 0.41,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.0394,
+        "Phishing": 0.078,
+        "BEC/Fraud": 0.3467,
+        "Spam": 0.126,
+        "Suspicious": 0.41
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "hours",
+          "weight": 0.723,
+          "value": 0.707,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] auth_security_failure",
+          "weight": 0.498,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] frequent_financial_terms",
+          "weight": 0.46,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[tech] has_urgency_words",
+          "weight": 0.125,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "security",
+          "weight": -0.084,
+          "value": 0.707,
+          "impact": "decreases_risk"
+        },
+        {
+          "feature": "[tech] has_financial_words",
+          "weight": -0.031,
+          "value": 1,
+          "impact": "decreases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.7952
+      }
+    },
+    "risk": {
+      "score": 100,
+      "category": "Critical",
+      "positiveFactors": [
+        {
+          "points": 22,
+          "rule": "AUTH_DMARC_FAIL",
+          "description": "DMARC policy validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "AUTH_SPF_FAIL",
+          "description": "SPF sender validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 15,
+          "rule": "AUTH_DKIM_FAIL",
+          "description": "DKIM cryptographic signature verification failed",
+          "category": "authentication"
+        },
+        {
+          "points": 25,
+          "rule": "IDENTITY_DISPLAY_SPOOF",
+          "description": "Display name impersonates known executive or organization while sender domain is external",
+          "category": "sender"
+        },
+        {
+          "points": 28,
+          "rule": "IDENTITY_LOOKALIKE_DOMAIN",
+          "description": "Sender domain matches typosquatting or brand impersonation pattern",
+          "category": "sender"
+        },
+        {
+          "points": 35,
+          "rule": "URL_KNOWN_MALICIOUS",
+          "description": "Extracted URL flagged by threat intelligence database",
+          "category": "links"
+        },
+        {
+          "points": 20,
+          "rule": "URL_LOOKALIKE_DOMAIN",
+          "description": "URL domain is a lookalike/typosquat of major brand",
+          "category": "links"
+        },
+        {
+          "points": 24,
+          "rule": "NLP_FINANCIAL_DIVERSION",
+          "description": "Content requests urgent wire transfer, ACH bank update, or payment diversion",
+          "category": "content"
+        }
+      ],
+      "negativeFactors": [],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +187 risk points from 8 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 100/100 (Critical)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "High-confidence Business Email Compromise (BEC) and financial fraud pattern detected in message titled \"Security Notification: Your PayPal payment was sent to Coinmama Ltd\". The sender claims identity \"PayPal Customer Protection\" but exhibits sender impersonation indicators and urgent payment diversion phrasing without verified cryptographic domain alignment.",
+      "threatActorTTPs": "TTP Analysis: T1566.002 (Spearphishing Link) / T1566.001 (Spearphishing Attachment) / T1656 (Impersonation). Actor utilized urgent deadline lures to bypass critical thinking, obfuscated destination links, and bypassed standard SPF/DMARC filters via external relay infrastructure.",
+      "evidenceHighlights": [
+        "SPF sender authorization failed",
+        "DMARC domain policy rejected sender alignment",
+        "Display name impersonation: claimed brand/executive but sent from 'service-paypa1-security.xyz'",
+        "Lookalike/typosquatted brand domain detected in extracted hyperlinks",
+        "Content solicits urgent wire transfer, bank account re-routing, or invoice payments"
+      ],
+      "recommendedActions": [
+        "Immediately quarantine message across tenant mailboxes via Exchange/Google Admin",
+        "Block sender address and origin IP in mail gateway / firewall edge rules",
+        "Reset credentials immediately for any recipient who accessed embedded URLs",
+        "Add extracted malicious domains and attachment hashes to EDR/SIEM watchlists"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:23:40.442Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "System (Demo Seed)",
+        "details": "Ingested paypal_lookalike_domain.eml (SHA-256: b67c6d1b462b6bcc...). Initial risk score: 100/100 (Critical)."
+      },
+      {
+        "timestamp": "2026-09-10T17:27:25.914Z",
+        "action": "STATUS_CHANGED",
+        "analyst": "SOC Analyst",
+        "details": "Case status changed from NEW to UNDER_INVESTIGATION"
+      }
+    ]
+  },
+  {
+    "id": "ccee2747-f243-4a2e-847f-7addb957ced9",
+    "caseId": "CASE-2026-2612",
+    "evidenceId": "EVID-7341C8EB",
+    "createdAt": "2026-09-10T17:29:34.535Z",
+    "updatedAt": "2026-09-10T17:29:34.535Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "LOW",
+      "SPAM"
+    ],
+    "rawEmlContent": "MIT Sloan logo\t \tMIT SLOAN\nAdmissions\n \n \n \nHi Ayesha,\n\nJoin us on September 15 for an MBA & LGO Virtual Information Session!\n\nWe’ll be hosting a panel of current MIT Sloan students who will share their experiences with the curriculum, student life, and career resources. You’ll also have plenty of time for Q&A, so bring your questions!\n\nThis session is a great opportunity to learn more about the MBA and LGO programs and to explore whether MIT Sloan is the right fit for you.\n\n \nBest,\n\nMIT Sloan Admissions\n \n \n \n \n \npattern\n \nMBA/LGO • Virtual Information Session\n \nSeptember 15, 2026 | 8 a.m.–9 a.m. ET\nOnline\n \nREGISTER HERE\n \n \nInterested in visiting campus?\n \nExperience MIT Sloan firsthand by attending the Class Visit Program, complete with an opportunity to sit in on a real MBA class alongside an admissions information session and student panel–your opportunity to learn more ahead of the Round 1 deadline.\n \n \npattern\n \nMBA Class Visit Program\n \nSeptember–October 2026 | Times Vary (ET)\nCambridge, MA\n \nREGISTER HERE\n \n \t\n \nicon\n \nMIT Sloan School of Management\nOffice of Admissions\n50 Memorial Drive, Building E52-359\nCambridge, MA 02142\n \n \n \n \n \n \nThis email was sent to ayeshas1965@gmail.com by MIT Sloan School of Management.\nUnsubscribe from MBA Admissions Event Invitations.",
+    "originalFilename": "pasted_inspection.eml",
+    "fileSizeBytes": 1307,
+    "sha256": "7570fe9de3aab0cfeb10505ebe1123490c5fc82e825a651f69c8b2f601d1614a",
+    "subject": "(No Subject)",
+    "from": {
+      "name": "",
+      "address": "",
+      "domain": ""
+    },
+    "to": [],
+    "cc": [],
+    "plainTextBody": "Join us on September 15 for an MBA & LGO Virtual Information Session!\n\nWe’ll be hosting a panel of current MIT Sloan students who will share their experiences with the curriculum, student life, and career resources. You’ll also have plenty of time for Q&A, so bring your questions!\n\nThis session is a great opportunity to learn more about the MBA and LGO programs and to explore whether MIT Sloan is the right fit for you.\n\n \nBest,\n\nMIT Sloan Admissions\n \n \n \n \n \npattern\n \nMBA/LGO • Virtual Information Session\n \nSeptember 15, 2026 | 8 a.m.–9 a.m. ET\nOnline\n \nREGISTER HERE\n \n \nInterested in visiting campus?\n \nExperience MIT Sloan firsthand by attending the Class Visit Program, complete with an opportunity to sit in on a real MBA class alongside an admissions information session and student panel–your opportunity to learn more ahead of the Round 1 deadline.\n \n \npattern\n \nMBA Class Visit Program\n \nSeptember–October 2026 | Times Vary (ET)\nCambridge, MA\n \nREGISTER HERE\n \n \t\n \nicon\n \nMIT Sloan School of Management\nOffice of Admissions\n50 Memorial Drive, Building E52-359\nCambridge, MA 02142\n \n \n \n \n \n \nThis email was sent to ayeshas1965@gmail.com by MIT Sloan School of Management.\nUnsubscribe from MBA Admissions Event Invitations.",
+    "normalizedText": "Join us on September 15 for an MBA & LGO Virtual Information Session! We’ll be hosting a panel of current MIT Sloan students who will share their experiences with the curriculum, student life, and career resources. You’ll also have plenty of time for Q&A, so bring your questions! This session is a great opportunity to learn more about the MBA and LGO programs and to explore whether MIT Sloan is the right fit for you. Best, MIT Sloan Admissions pattern MBA/LGO • Virtual Information Session September 15, 2026 | 8 a.m.–9 a.m. ET\nOnline REGISTER HERE Interested in visiting campus? Experience MIT Sloan firsthand by attending the Class Visit Program, complete with an opportunity to sit in on a real MBA class alongside an admissions information session and student panel–your opportunity to learn more ahead of the Round 1 deadline. pattern MBA Class Visit Program September–October 2026 | Times Vary (ET)\nCambridge, MA REGISTER HERE icon MIT Sloan School of Management\nOffice of Admissions\n50 Memorial Drive, Building E52-359\nCambridge, MA 02142 This email was sent to ayeshas1965@gmail.com by MIT Sloan School of Management.\nUnsubscribe from MBA Admissions Event Invitations.",
+    "authentication": {
+      "spf": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Received-SPF or Authentication-Results header found in message",
+        "headerFound": false
+      },
+      "dkim": {
+        "status": "NOT_AVAILABLE",
+        "details": "No DKIM-Signature header present in email",
+        "headerFound": false
+      },
+      "dmarc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No DMARC policy evaluation found in message headers",
+        "headerFound": false
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": false,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": []
+    },
+    "relayPath": [],
+    "ipIntelligence": [],
+    "urls": [],
+    "domains": [],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 25,
+      "urgencyKeywords": [
+        "deadline"
+      ],
+      "financialScore": 0,
+      "financialKeywords": [],
+      "credentialScore": 0,
+      "credentialKeywords": [],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Spam",
+      "confidence": 0.4097,
+      "modelName": "TF-IDF + Softmax Logistic Regression (Dual Feature Vector)",
+      "probabilities": {
+        "Legitimate": 0.147,
+        "Phishing": 0.1062,
+        "BEC/Fraud": 0.3075,
+        "Spam": 0.4097,
+        "Suspicious": 0.0295
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[tech] has_credential_harvest_words",
+          "weight": -1.041,
+          "value": 1,
+          "impact": "decreases_risk"
+        },
+        {
+          "feature": "[tech] has_urgency_words",
+          "weight": 0.608,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "session",
+          "weight": -0.206,
+          "value": 0.926,
+          "impact": "decreases_risk"
+        },
+        {
+          "feature": "email",
+          "weight": -0.319,
+          "value": 0.21,
+          "impact": "decreases_risk"
+        },
+        {
+          "feature": "right",
+          "weight": -0.259,
+          "value": 0.232,
+          "impact": "decreases_risk"
+        },
+        {
+          "feature": "will",
+          "weight": -0.21,
+          "value": 0.21,
+          "impact": "decreases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.6407
+      }
+    },
+    "risk": {
+      "score": 0,
+      "category": "Low",
+      "positiveFactors": [],
+      "negativeFactors": [],
+      "unavailableSignals": [
+        "DMARC DNS record not available in message headers",
+        "SPF validation not recorded or verifiable",
+        "DKIM cryptographic signature not present in headers"
+      ],
+      "calculationSummary": "Base score composed of +0 risk points from 0 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 0/100 (Low)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "Message analyzed as routine or legitimate communication. Cryptographic authentication checks and content heuristics show no significant indicators of credential harvesting, malware delivery, or executive impersonation.",
+      "threatActorTTPs": "TTP Analysis: No adversarial Tactics, Techniques, or Procedures (TTPs) were identified. Routine business communication patterns observed.",
+      "evidenceHighlights": [
+        "Sender SPF and DKIM verified successfully",
+        "No malicious attachments or suspicious URLs detected",
+        "Natural language text contains standard operational conversation"
+      ],
+      "recommendedActions": [
+        "No immediate remediation required; message safe for standard delivery"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:29:34.535Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "SOC Analyst",
+        "details": "Ingested pasted_inspection.eml (SHA-256: 7570fe9de3aab0cf...). Initial risk score: 0/100 (Low)."
+      }
+    ]
+  },
+  {
+    "id": "08fd5aee-3577-418a-a7be-910ea2da815f",
+    "caseId": "CASE-2026-8822",
+    "evidenceId": "EVID-772EF6BC",
+    "createdAt": "2026-09-10T17:44:17.462Z",
+    "updatedAt": "2026-09-10T17:44:17.462Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "CRITICAL",
+      "SUSPICIOUS"
+    ],
+    "rawEmlContent": "From: Security Alert <security@chase-secure-login.xyz>\nTo: target@victimcorp.com\nSubject: URGENT: Chase Account Locked Immediately Verify Credentials\nDate: Thu, 10 Sep 2026 10:00:00 -0400\nAuthentication-Results: mx.victimcorp.com; spf=fail (sender IP 198.51.100.24); dkim=fail; dmarc=fail\nReceived: from unknown-relay.xyz ([198.51.100.24]) by mx.victimcorp.com with SMTP; Thu, 10 Sep 2026 10:00:00 -0400\n\nDear Customer,\nYour Chase account has been suspended due to unauthorized login attempts. Click here immediately to verify your password and credentials: http://chase-login-update.online/auth\nFailure to verify within 24 hours will result in permanent termination of your banking access.\n\nSecurity Operations Team",
+    "originalFilename": "test_phish.eml",
+    "fileSizeBytes": 716,
+    "sha256": "96f9b72606dea4a69e370055313cbe3bf4d72e93d1ac7a581106ef1ffd59d2f6",
+    "subject": "URGENT: Chase Account Locked Immediately Verify Credentials",
+    "from": {
+      "name": "Security Alert",
+      "address": "security@chase-secure-login.xyz",
+      "domain": "chase-secure-login.xyz"
+    },
+    "to": [
+      "target@victimcorp.com"
+    ],
+    "cc": [],
+    "date": "2026-09-10T14:00:00.000Z",
+    "plainTextBody": "Dear Customer,\nYour Chase account has been suspended due to unauthorized login attempts. Click here immediately to verify your password and credentials: http://chase-login-update.online/auth\nFailure to verify within 24 hours will result in permanent termination of your banking access.\n\nSecurity Operations Team",
+    "normalizedText": "Dear Customer,\nYour Chase account has been suspended due to unauthorized login attempts. Click here immediately to verify your password and credentials: http://chase-login-update.online/auth\nFailure to verify within 24 hours will result in permanent termination of your banking access. Security Operations Team",
+    "authentication": {
+      "spf": {
+        "status": "FAIL",
+        "details": "SPF recorded as FAIL via Authentication-Results",
+        "headerFound": true
+      },
+      "dkim": {
+        "status": "FAIL",
+        "details": "DKIM status: FAIL from Authentication-Results",
+        "headerFound": true
+      },
+      "dmarc": {
+        "status": "FAIL",
+        "details": "DMARC policy failed: alignment between From domain and SPF/DKIM was rejected",
+        "headerFound": true
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": false,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": []
+    },
+    "relayPath": [
+      {
+        "hopNumber": 1,
+        "ip": "198.51.100.24",
+        "hostname": "unknown-relay.xyz",
+        "byHost": "mx.victimcorp.com",
+        "timestamp": "Thu, 10 Sep 2026 10:00:00 -0400",
+        "rawHeader": "from unknown-relay.xyz ([198.51.100.24]) by mx.victimcorp.com with SMTP; Thu, 10 Sep 2026 10:00:00 -0400",
+        "trustAssessment": "earliest observed IP",
+        "country": "Romania",
+        "city": "Bucharest",
+        "asn": "Unknown",
+        "org": "TEST-NET-2 RFC5737",
+        "isPrivateIp": false
+      }
+    ],
+    "ipIntelligence": [
+      {
+        "ip": "198.51.100.24",
+        "version": "IPv4",
+        "isPrivate": false,
+        "country": "Romania",
+        "countryCode": "RO",
+        "region": "București",
+        "city": "Bucharest",
+        "lat": 44.4267,
+        "lon": 26.1025,
+        "isp": "TEST-NET-2",
+        "asn": "Unknown",
+        "org": "TEST-NET-2 RFC5737",
+        "isVpnOrProxy": false,
+        "reputationStatus": "NOT FOUND",
+        "disclaimer": "Associated infrastructure location is derived from network routing announcements and BGP registries. It does NOT prove the physical location or identity of the human actor."
+      }
+    ],
+    "urls": [
+      {
+        "id": "url-fa8aaf8f",
+        "rawUrl": "http://chase-login-update.online/auth",
+        "protocol": "http:",
+        "domain": "chase-login-update.online",
+        "path": "/auth",
+        "queryParams": {},
+        "isHttps": false,
+        "hasIpHost": false,
+        "isShortened": false,
+        "isLookalike": true,
+        "lookalikeTarget": "chase",
+        "isSuspiciousTld": true,
+        "excessiveSubdomains": false,
+        "hasEncodedChars": false,
+        "anchorMismatch": false,
+        "verdict": "MALICIOUS",
+        "threatIntelStatus": "SUSPICIOUS",
+        "reasons": [
+          "Lookalike/typosquat domain detected targeting 'chase'",
+          "Registered under high-abuse TLD (.online)",
+          "Unencrypted plain HTTP transmission"
+        ]
+      }
+    ],
+    "domains": [
+      {
+        "domain": "chase-secure-login.xyz",
+        "source": "from",
+        "hasMx": false,
+        "isLookalike": true,
+        "lookalikeTarget": "chase",
+        "suspiciousTld": true,
+        "entropy": 3.971,
+        "flags": [
+          "Typosquatting/brand impersonation match: 'chase'",
+          "High abuse rate top-level domain: .xyz",
+          "High lexical entropy (3.971): potential DGA or random character generation"
+        ]
+      },
+      {
+        "domain": "chase-login-update.online",
+        "source": "url",
+        "hasMx": false,
+        "isLookalike": true,
+        "lookalikeTarget": "chase",
+        "suspiciousTld": true,
+        "entropy": 3.863,
+        "flags": [
+          "Typosquatting/brand impersonation match: 'chase'",
+          "High abuse rate top-level domain: .online",
+          "High lexical entropy (3.863): potential DGA or random character generation"
+        ]
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 100,
+      "urgencyKeywords": [
+        "urgent",
+        "immediately",
+        "suspend",
+        "within 24 hours"
+      ],
+      "financialScore": 0,
+      "financialKeywords": [],
+      "credentialScore": 75,
+      "credentialKeywords": [
+        "password",
+        "login",
+        "credentials"
+      ],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 1,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Suspicious",
+      "confidence": 0.518,
+      "modelName": "Dual ML Ensemble (TF-IDF LogReg + Technical Random Forest)",
+      "probabilities": {
+        "Legitimate": 0.0384,
+        "Phishing": 0.369,
+        "BEC/Fraud": 0.0486,
+        "Spam": 0.0259,
+        "Suspicious": 0.5182
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[NLP n-gram] \"verify\"",
+          "weight": 3.66,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[NLP n-gram] \"credentials\"",
+          "weight": 2.51,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[NLP n-gram] \"password\"",
+          "weight": 1.49,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[NLP n-gram] \"click\"",
+          "weight": 1.32,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[NLP n-gram] \"login\"",
+          "weight": 1.01,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[NLP n-gram] \"access\"",
+          "weight": 0.97,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[NLP n-gram] \"hours\"",
+          "weight": 0.84,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[NLP n-gram] \"account\"",
+          "weight": 0.71,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[Technical RF] spf_fail",
+          "weight": 1.5,
+          "value": 1,
+          "impact": "increases_risk"
+        },
+        {
+          "feature": "[Technical RF] dkim_fail",
+          "weight": 1.5,
+          "value": 1,
+          "impact": "increases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.962
+      },
+      "nlpModel": {
+        "predictedClass": "Phishing",
+        "confidence": 0.738,
+        "probabilities": {
+          "Legitimate": 0.0767,
+          "Phishing": 0.738,
+          "BEC/Fraud": 0.0971,
+          "Spam": 0.0517,
+          "Suspicious": 0.0365
+        },
+        "contributingFeatures": [
+          {
+            "feature": "verify",
+            "contribution": 0.3662
+          },
+          {
+            "feature": "credentials",
+            "contribution": 0.2506
+          },
+          {
+            "feature": "password",
+            "contribution": 0.149
+          },
+          {
+            "feature": "click",
+            "contribution": 0.1321
+          },
+          {
+            "feature": "login",
+            "contribution": 0.1006
+          },
+          {
+            "feature": "access",
+            "contribution": 0.0972
+          },
+          {
+            "feature": "hours",
+            "contribution": 0.0842
+          },
+          {
+            "feature": "account",
+            "contribution": 0.0712
+          }
+        ]
+      },
+      "technicalModel": {
+        "predictedClass": "Suspicious",
+        "confidence": 1,
+        "probabilities": {
+          "Legitimate": 0,
+          "Phishing": 0,
+          "BEC/Fraud": 0,
+          "Spam": 0,
+          "Suspicious": 1
+        },
+        "activeSignals": [
+          "spf_fail",
+          "dkim_fail",
+          "dmarc_fail",
+          "suspicious_url",
+          "credential_request",
+          "urgency_pressure",
+          "domain_untrusted_or_malicious"
+        ],
+        "modelName": "Random Forest (10 Decision Trees)"
+      }
+    },
+    "risk": {
+      "score": 100,
+      "category": "Critical",
+      "positiveFactors": [
+        {
+          "points": 22,
+          "rule": "AUTH_DMARC_FAIL",
+          "description": "DMARC policy validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 18,
+          "rule": "AUTH_SPF_FAIL",
+          "description": "SPF sender validation failed",
+          "category": "authentication"
+        },
+        {
+          "points": 15,
+          "rule": "AUTH_DKIM_FAIL",
+          "description": "DKIM cryptographic signature verification failed",
+          "category": "authentication"
+        },
+        {
+          "points": 28,
+          "rule": "IDENTITY_LOOKALIKE_DOMAIN",
+          "description": "Sender domain matches typosquatting or brand impersonation pattern",
+          "category": "sender"
+        },
+        {
+          "points": 35,
+          "rule": "URL_KNOWN_MALICIOUS",
+          "description": "Extracted URL flagged by threat intelligence database",
+          "category": "links"
+        },
+        {
+          "points": 20,
+          "rule": "URL_LOOKALIKE_DOMAIN",
+          "description": "URL domain is a lookalike/typosquat of major brand",
+          "category": "links"
+        },
+        {
+          "points": 22,
+          "rule": "NLP_CREDENTIAL_HARVEST",
+          "description": "Content requests password, account verification, or login credentials",
+          "category": "content"
+        }
+      ],
+      "negativeFactors": [],
+      "unavailableSignals": [],
+      "calculationSummary": "Base score composed of +160 risk points from 7 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 100/100 (Critical)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "Credential harvesting and phishing attack pattern identified targeting message recipient. Analysis revealed deceptive call-to-action indicators, domain spoofing elements, and suspicious URL structures designed to capture user authentication credentials.",
+      "threatActorTTPs": "TTP Analysis: T1566.002 (Spearphishing Link) / T1566.001 (Spearphishing Attachment) / T1656 (Impersonation). Actor utilized urgent deadline lures to bypass critical thinking, obfuscated destination links, and bypassed standard SPF/DMARC filters via external relay infrastructure.",
+      "evidenceHighlights": [
+        "SPF sender authorization failed",
+        "DMARC domain policy rejected sender alignment",
+        "Lookalike/typosquatted brand domain detected in extracted hyperlinks",
+        "Content actively solicits login credentials, password reset, or portal authentication"
+      ],
+      "recommendedActions": [
+        "Immediately quarantine message across tenant mailboxes via Exchange/Google Admin",
+        "Block sender address and origin IP in mail gateway / firewall edge rules",
+        "Reset credentials immediately for any recipient who accessed embedded URLs",
+        "Add extracted malicious domains and attachment hashes to EDR/SIEM watchlists"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:44:17.462Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "SOC Analyst",
+        "details": "Ingested test_phish.eml (SHA-256: 96f9b72606dea4a6...). Initial risk score: 100/100 (Critical)."
+      }
+    ]
+  },
+  {
+    "id": "2c9b2412-691a-4121-96b1-892a0f22e7b9",
+    "caseId": "CASE-2026-9713",
+    "evidenceId": "EVID-7420D84F",
+    "createdAt": "2026-09-10T17:44:35.674Z",
+    "updatedAt": "2026-09-10T17:44:35.674Z",
+    "status": "NEW",
+    "analystNotes": "",
+    "tags": [
+      "LOW",
+      "SUSPICIOUS"
+    ],
+    "rawEmlContent": "Subject: Test\nFrom: test@example.com\n\nHello",
+    "originalFilename": "email_inspection.eml",
+    "fileSizeBytes": 43,
+    "sha256": "e9e15fcc94b3fa0263f5820eb55c720dabc3ae138626b41b9c47dc24e00ca46a",
+    "subject": "Test",
+    "from": {
+      "name": "test",
+      "address": "test@example.com",
+      "domain": "example.com"
+    },
+    "to": [],
+    "cc": [],
+    "plainTextBody": "Hello",
+    "normalizedText": "Hello",
+    "authentication": {
+      "spf": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Received-SPF or Authentication-Results header found in message",
+        "headerFound": false
+      },
+      "dkim": {
+        "status": "NOT_AVAILABLE",
+        "details": "No DKIM-Signature header present in email",
+        "headerFound": false
+      },
+      "dmarc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No DMARC policy evaluation found in message headers",
+        "headerFound": false
+      },
+      "arc": {
+        "status": "NOT_AVAILABLE",
+        "details": "No Authenticated Received Chain (ARC) headers present",
+        "headerFound": false
+      },
+      "displaySpoofDetected": false,
+      "fromReplyMismatch": false,
+      "fromReturnMismatch": false,
+      "messageIdSuspicious": false,
+      "detectedMismatches": []
+    },
+    "relayPath": [],
+    "ipIntelligence": [],
+    "urls": [],
+    "domains": [
+      {
+        "domain": "example.com",
+        "source": "from",
+        "hasMx": true,
+        "spfRecord": "v=spf1 -all",
+        "dmarcRecord": "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s",
+        "isLookalike": false,
+        "suspiciousTld": false,
+        "entropy": 3.096,
+        "flags": []
+      }
+    ],
+    "attachments": [],
+    "nlp": {
+      "urgencyScore": 0,
+      "urgencyKeywords": [],
+      "financialScore": 0,
+      "financialKeywords": [],
+      "credentialScore": 0,
+      "credentialKeywords": [],
+      "impersonationScore": 0,
+      "impersonationKeywords": [],
+      "threatScore": 0,
+      "threatKeywords": [],
+      "callToActionCount": 0,
+      "hiddenTextDetected": false,
+      "languageDetected": "English (detected via token distribution)"
+    },
+    "ml": {
+      "predictedClass": "Suspicious",
+      "confidence": 0.545,
+      "modelName": "Dual ML Ensemble (TF-IDF LogReg + Technical Random Forest)",
+      "probabilities": {
+        "Legitimate": 0.1776,
+        "Phishing": 0.1007,
+        "BEC/Fraud": 0.0624,
+        "Spam": 0.1145,
+        "Suspicious": 0.5449
+      },
+      "topContributingFeatures": [
+        {
+          "feature": "[NLP n-gram] \"test\"",
+          "weight": 2.02,
+          "value": 1,
+          "impact": "increases_risk"
+        }
+      ],
+      "binaryPrediction": {
+        "isMalicious": true,
+        "maliciousProbability": 0.822
+      },
+      "nlpModel": {
+        "predictedClass": "Legitimate",
+        "confidence": 0.3551,
+        "probabilities": {
+          "Legitimate": 0.3551,
+          "Phishing": 0.2014,
+          "BEC/Fraud": 0.1247,
+          "Spam": 0.229,
+          "Suspicious": 0.0898
+        },
+        "contributingFeatures": [
+          {
+            "feature": "test",
+            "contribution": 0.2016
+          }
+        ]
+      },
+      "technicalModel": {
+        "predictedClass": "Suspicious",
+        "confidence": 1,
+        "probabilities": {
+          "Legitimate": 0,
+          "Phishing": 0,
+          "BEC/Fraud": 0,
+          "Spam": 0,
+          "Suspicious": 1
+        },
+        "activeSignals": [],
+        "modelName": "Random Forest (10 Decision Trees)"
+      }
+    },
+    "risk": {
+      "score": 0,
+      "category": "Low",
+      "positiveFactors": [],
+      "negativeFactors": [],
+      "unavailableSignals": [
+        "DMARC DNS record not available in message headers",
+        "SPF validation not recorded or verifiable",
+        "DKIM cryptographic signature not present in headers"
+      ],
+      "calculationSummary": "Base score composed of +0 risk points from 0 indicators, mitigated by 0 points from verified legitimate signals. Final risk assessed at 0/100 (Low)."
+    },
+    "aiNarrative": {
+      "executiveSummary": "Message analyzed as routine or legitimate communication. Cryptographic authentication checks and content heuristics show no significant indicators of credential harvesting, malware delivery, or executive impersonation.",
+      "threatActorTTPs": "TTP Analysis: No adversarial Tactics, Techniques, or Procedures (TTPs) were identified. Routine business communication patterns observed.",
+      "evidenceHighlights": [
+        "Sender SPF and DKIM verified successfully",
+        "No malicious attachments or suspicious URLs detected",
+        "Natural language text contains standard operational conversation"
+      ],
+      "recommendedActions": [
+        "No immediate remediation required; message safe for standard delivery"
+      ],
+      "isAiGenerated": false,
+      "modelUsed": "Deterministic Rule-Based Forensic Engine"
+    },
+    "auditLog": [
+      {
+        "timestamp": "2026-09-10T17:44:35.674Z",
+        "action": "EMAIL_INGESTED",
+        "analyst": "SOC Analyst",
+        "details": "Ingested email_inspection.eml (SHA-256: e9e15fcc94b3fa02...). Initial risk score: 0/100 (Low)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1435 @@
+{
+  "modelType": "Random Forest Classifier (Technical Security Signals)",
+  "classes": [
+    "Legitimate",
+    "Phishing",
+    "BEC/Fraud",
+    "Spam",
+    "Suspicious"
+  ],
+  "featureNames": [
+    "spf_pass",
+    "spf_fail",
+    "dkim_pass",
+    "dkim_fail",
+    "dmarc_pass",
+    "dmarc_fail",
+    "domain_mismatch",
+    "replyto_mismatch",
+    "suspicious_url",
+    "url_shortener",
+    "credential_request",
+    "financial_request",
+    "urgency_pressure",
+    "suspicious_attachment",
+    "ip_untrusted_or_malicious",
+    "domain_untrusted_or_malicious"
+  ],
+  "trees": [
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "isLeaf": false,
+      "featureIndex": 15,
+      "featureName": "domain_untrusted_or_malicious",
+      "threshold": 0.5,
+      "left": {
+        "isLeaf": false,
+        "featureIndex": 4,
+        "featureName": "dmarc_pass",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 0,
+          "featureName": "spf_pass",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "Spam",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 1,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": true,
+          "predictedClass": "Legitimate",
+          "probabilities": {
+            "Legitimate": 1,
+            "Phishing": 0,
+            "BEC/Fraud": 0,
+            "Spam": 0,
+            "Suspicious": 0
+          }
+        }
+      },
+      "right": {
+        "isLeaf": false,
+        "featureIndex": 8,
+        "featureName": "suspicious_url",
+        "threshold": 0.5,
+        "left": {
+          "isLeaf": false,
+          "featureIndex": 3,
+          "featureName": "dkim_fail",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0.667,
+              "Spam": 0,
+              "Suspicious": 0.333
+            }
+          },
+          "right": {
+            "isLeaf": true,
+            "predictedClass": "BEC/Fraud",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 1,
+              "Spam": 0,
+              "Suspicious": 0
+            }
+          }
+        },
+        "right": {
+          "isLeaf": false,
+          "featureIndex": 6,
+          "featureName": "domain_mismatch",
+          "threshold": 0.5,
+          "left": {
+            "isLeaf": true,
+            "predictedClass": "Suspicious",
+            "probabilities": {
+              "Legitimate": 0,
+              "Phishing": 0,
+              "BEC/Fraud": 0,
+              "Spam": 0,
+              "Suspicious": 1
+            }
+          },
+          "right": {
+            "isLeaf": false,
+            "featureIndex": 14,
+            "featureName": "ip_untrusted_or_malicious",
+            "threshold": 0.5,
+            "left": {
+              "isLeaf": true,
+              "predictedClass": "Suspicious",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 0,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 1
+              }
+            },
+            "right": {
+              "isLeaf": true,
+              "predictedClass": "Phishing",
+              "probabilities": {
+                "Legitimate": 0,
+                "Phishing": 1,
+                "BEC/Fraud": 0,
+                "Spam": 0,
+                "Suspicious": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "trainedAt": "2026-09-10T17:40:07.835Z",
+  "metrics": {
+    "accuracy": 0.8462,
+    "precision": 0.9,
+    "recall": 0.8,
+    "f1Score": 0.8471,
+    "testSamplesCount": 13,
+    "trainingSamplesCount": 47,
+    "confusionMatrix": {
+      "labels": [
+        "Legitimate",
+        "Phishing",
+        "BEC/Fraud",
+        "Spam",
+        "Suspicious"
+      ],
+      "matrix": [
+        [
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    "classMetrics": {
+      "Legitimate": {
+        "precision": 0.75,
+        "recall": 1,
+        "f1": 0.8571,
+        "support": 3
+      },
+      "Phishing": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "support": 3
+      },
+      "BEC/Fraud": {
+        "precision": 0.75,
+        "recall": 1,
+        "f1": 0.8571,
+        "support": 3
+      },
+      "Spam": {
+        "precision": 1,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 2
+      },
+      "Suspicious": {
+        "precision": 1,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "support": 2
+      }
+    }
+  },
+  "featureImportances": {
+    "spf_pass": 0.1429,
+    "spf_fail": 0,
+    "dkim_pass": 0,
+    "dkim_fail": 0.1429,
+    "dmarc_pass": 0.1429,
+    "dmarc_fail": 0,
+    "domain_mismatch": 0.1429,
+    "replyto_mismatch": 0,
+    "suspicious_url": 0.1429,
+    "url_shortener": 0,
+    "credential_request": 0,
+    "financial_request": 0,
+    "urgency_pressure": 0,
+    "suspicious_attachment": 0,
+    "ip_untrusted_or_malicious": 0.1429,
+    "domain_untrusted_or_malicious": 0.1429
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Email Threat Detection & Forensic Intelligence Platform",
+  "description": "AI-powered email security platform featuring deterministic header checks, ML/NLP phishing classification, IP geolocation, relay path tracing, and forensic case correlation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
